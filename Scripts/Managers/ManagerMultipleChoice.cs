@@ -101,6 +101,7 @@ public partial class ManagerMultipleChoice : Node
 		{
 			var q = new C_QuestionMultipleChoice
 			{
+				CategoryTitle = global["CategoryTitle"].ToString(),
 				QuestionText = questionDict["QuestionText"].ToString(),
 				AnswerA = questionDict["AnswerA"].ToString(),
 				AnswerB = questionDict["AnswerB"].ToString(),
@@ -108,11 +109,12 @@ public partial class ManagerMultipleChoice : Node
 				AnswerD = questionDict["AnswerD"].ToString(),
 				CorrectAnswer = questionDict["CorrectAnswer"].ToString(),
 				AnswerFact = questionDict["AnswerFact"].ToString(),
-				QuestionImage = questionDict["QuestionImage"].ToString(),
-				CategoryTitle = global["CategoryTitle"].ToString(),
-				BGImage = global["BGImage"].ToString(),
+				ButtonTextColour = new Color(global["ButtonTextColour"].ToString()),
 				ButtonBGColour = new Color(global["ButtonBGColour"].ToString()),
-				ButtonTextColour = new Color(global["ButtonTextColour"].ToString())
+				QuestionImage = questionDict["QuestionImage"].ToString(),
+				BGImage = global["BGImage"].ToString(),
+				SelectionSound = global["SelectionSound"].ToString(),
+				BGMusic = global["BGMusic"].ToString()
 			};
 
 			GD.Print($"Loaded question: {q.QuestionText}");

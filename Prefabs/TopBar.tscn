@@ -1,15 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2d35sub2p3wp"]
+[gd_scene load_steps=3 format=3 uid="uid://d2d35sub2p3wp"]
 
 [ext_resource type="Script" uid="uid://co0lo02vnu10n" path="res://addons/font_auto_size_labels/auto_size_rich_text_label.gd" id="1_016jn"]
+[ext_resource type="Script" uid="uid://qoi5bhwei3jl" path="res://Scripts/SceneButton.cs" id="2_q2hl7"]
 
 [node name="TopBar" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -648.0
+offset_bottom = -542.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="TopBarBG" type="ColorRect" parent="."]
 layout_mode = 1
@@ -24,9 +26,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 10.0
+offset_left = 100.0
 offset_top = 10.0
-offset_right = -10.0
+offset_right = -100.0
 offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -48,6 +50,7 @@ offset_left = 10.0
 offset_top = 10.0
 offset_right = 90.0
 offset_bottom = 90.0
+script = ExtResource("2_q2hl7")
 
 [node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="ButtonLeft"]
 layout_mode = 1
@@ -56,6 +59,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 20
 text = "Return"
 scroll_active = false
@@ -85,6 +89,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 16
 text = "Reveal Answer"
 scroll_active = false

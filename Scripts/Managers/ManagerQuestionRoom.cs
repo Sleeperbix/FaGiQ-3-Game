@@ -3,8 +3,8 @@ using System;
 
 public partial class ManagerQuestionRoom : Control
 {
-	[Export] private Control QuestionGUI;
-	[Export] private Control TitleBarGUI;
+	[Export] private Control questionGUI;
+	[Export] private Control topBarGUI;
 
 	// Text labels, question text, answers etc.
 	private RichTextLabel guiCategoryText;
@@ -22,16 +22,16 @@ public partial class ManagerQuestionRoom : Control
 		var question = ManagerGame.SelectedQuestion;
 
 		// Locate fields
-		guiCategoryText = TitleBarGUI.GetNode<RichTextLabel>("TopBarBG/TopBarText");
-		guiQuestionText = QuestionGUI.GetNode<RichTextLabel>("ColorRect/QuestionContainer/QuestionText");
-		guiAnswerA = QuestionGUI.GetNode<RichTextLabel>("ColorRect/QuestionContainer/AnswerA");
-		guiAnswerB = QuestionGUI.GetNode<RichTextLabel>("ColorRect/QuestionContainer/AnswerB");
-		guiAnswerC = QuestionGUI.GetNode<RichTextLabel>("ColorRect/QuestionContainer/AnswerC");
-		guiAnswerD = QuestionGUI.GetNode<RichTextLabel>("ColorRect/QuestionContainer/AnswerD");
+		guiCategoryText = topBarGUI.GetNode<RichTextLabel>("TopBarBG/TopBarText");
+		guiQuestionText = questionGUI.GetNode<RichTextLabel>("ColorRect/QuestionContainer/QuestionText");
+		guiAnswerA = questionGUI.GetNode<RichTextLabel>("ColorRect/QuestionContainer/AnswerA");
+		guiAnswerB = questionGUI.GetNode<RichTextLabel>("ColorRect/QuestionContainer/AnswerB");
+		guiAnswerC = questionGUI.GetNode<RichTextLabel>("ColorRect/QuestionContainer/AnswerC");
+		guiAnswerD = questionGUI.GetNode<RichTextLabel>("ColorRect/QuestionContainer/AnswerD");
 		//guiCorrectAnswer
 		//guiAnswerFact
 		//guiQuestionImage
-		guiQuestionBG = QuestionGUI.GetNode<TextureRect>("QuestionBG");
+		guiQuestionBG = questionGUI.GetNode<TextureRect>("QuestionBG");
 
 		// Assign fields
 		guiCategoryText.Text = question.CategoryTitle;
@@ -43,19 +43,21 @@ public partial class ManagerQuestionRoom : Control
 		//guiCorrectAnswer
 		//guiAnswerFact
 		//guiQuestionImage
+		
 		string imagePath = "res://Assets/" + question.BGImage;
-		//string imagePath = "res://Assets/Birds/Images/background-science.jpg";
 		Texture2D imageTexture = GD.Load<Texture2D>(imagePath);
 		GD.Print(imagePath);
 		guiQuestionBG.Texture = imageTexture;
-		if (imageTexture == null)
-		{
-			GD.Print("Texture failed to load!!");
-		}
-		else
-		{
-			GD.Print("Texture Loaded!");
-		}
+		// if (imageTexture == null)
+		// {
+		// 	GD.Print("Texture failed to load!!");
+		// }
+		// else
+		// {
+		// 	GD.Print("Texture Loaded!");
+		// }
+		string musicPath = "res://Assets/" + question.BGMusic;
+		ManagerAudio.Instance.PlayMusicLoop(musicPath);
 
 
 
@@ -69,7 +71,7 @@ public partial class ManagerQuestionRoom : Control
 			GD.Print("SelectedQuestion is null!");
 		}
 
-		if (QuestionGUI != null)
+		if (questionGUI != null)
 		{
 			GD.Print("Found Question GUI");
 		}
