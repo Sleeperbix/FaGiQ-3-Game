@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bco7kpmpylinc"]
+
+[ext_resource type="Script" uid="uid://cecjhawoal23h" path="res://Scripts/Managers/ManagerQuestionRoom.cs" id="1_o2exu"]
+
+[node name="ManagerQuestionRoom" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_o2exu")

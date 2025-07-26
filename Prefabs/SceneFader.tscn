@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dr024j8qw11ud"]
+
+[ext_resource type="Script" uid="uid://dy8bj1pfsn1yr" path="res://Scripts/Managers/SceneFader.cs" id="1_w6r6i"]
+
+[node name="SceneFader" type="CanvasLayer"]
+script = ExtResource("1_w6r6i")
+
+[node name="FadeRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true

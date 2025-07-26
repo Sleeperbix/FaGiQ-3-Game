@@ -1,0 +1,23 @@
+{
+    "Global": {
+        "CategoryTitle": "",
+        "BGImage": "",
+        "BGMusic": "",
+        "SelectionSound": "",
+        "ButtonTextColour": "#000000",
+        "ButtonBGColour": "#ffffff"
+    },
+    "Questions": [
+        {
+            "QuestionText": "",
+            "AnswerA": "",
+            "AnswerB": "",
+            "AnswerC": "",
+            "AnswerD": "",
+            "CorrectAnswer": "",
+            "AnswerFact": "",
+            "QuestionImage": "",
+            "Tags": [""]
+        }
+    ]
+}

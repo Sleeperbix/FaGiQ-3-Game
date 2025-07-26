@@ -1,0 +1,14 @@
+BIRDS
+What is the scientific name of the Emperor Penguin?
+Diomedea exulans
+Aptenodytes forsteri
+Columba palumbus
+Gallus gallus domesticus
+Aptenodytes forsteri
+The emperor penguin (Aptenodytes forsteri) is the tallest and heaviest of all living penguin species and is endemic to Antarctica.
+#000000
+#ffffff
+Birds/Images/emperorpenguin.jpg
+Birds/Images/background-birds.jpg
+Birds/Sounds/music-birds.wav
+Birds/Sounds/select-birds.wav

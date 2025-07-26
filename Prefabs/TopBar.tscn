@@ -1,0 +1,97 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2d35sub2p3wp"]
+
+[ext_resource type="Script" uid="uid://co0lo02vnu10n" path="res://addons/font_auto_size_labels/auto_size_rich_text_label.gd" id="1_016jn"]
+
+[node name="TopBar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopBarBG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 100.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 0.839216)
+
+[node name="TopBarText" type="RichTextLabel" parent="TopBarBG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "Room Name "
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_016jn")
+_max_size = 50
+_min_size = 10
+_current_font_size = 50
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
+
+[node name="ButtonLeft" type="Button" parent="."]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 90.0
+offset_bottom = 90.0
+
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="ButtonLeft"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 20
+text = "Return"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_016jn")
+_max_size = 20
+_current_font_size = 20
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
+
+[node name="ButtonLeft2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -90.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 90.0
+grow_horizontal = 0
+
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="ButtonLeft2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 16
+text = "Reveal Answer"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_016jn")
+_max_size = 16
+_current_font_size = 16
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"

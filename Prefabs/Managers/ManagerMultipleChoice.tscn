@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dglhgklsv0skn"]
+
+[ext_resource type="Script" uid="uid://d0actlggbnkgw" path="res://Scripts/Managers/ManagerMultipleChoice.cs" id="1_b4i0b"]
+
+[node name="ManagerMultipleChoice" type="Node"]
+script = ExtResource("1_b4i0b")

@@ -1,0 +1,14 @@
+DOGS
+What breed of dog is pictured here?
+Kuvasz
+German Pointer
+Great Dane
+Springer Spaniel
+German Pointer
+The German Shorthaired Pointer (or Deutsch Kurzhaar) is of medium size, and is an all-purpose gun dog suitable for hunting and retrieving on both land and water.
+#00000
+#cfcfcf
+Dogs/Images/germanpointer.jpg
+Dogs/Images/background-dogs.jpg
+Dogs/Sounds/music-dogs.mp3
+Dogs/Sounds/select-dogs.wav

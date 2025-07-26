@@ -1,0 +1,14 @@
+DEFAULT QUESTION
+Is this a question?
+Yes
+No
+Maybe
+I don't know
+Yes
+I return once again for the third installment of FaGiQ. And yes, this was a question.
+#000000
+#ffffff
+00Default/image_test.jpg
+.
+00Default/bgmusic_test.mp3
+.

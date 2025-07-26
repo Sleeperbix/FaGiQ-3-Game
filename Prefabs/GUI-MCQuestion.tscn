@@ -1,0 +1,90 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnflbr02bvfpl"]
+
+[ext_resource type="Texture2D" uid="uid://v6la1f1vbkir" path="res://Assets/00Default/image_test.jpg" id="1_omvyj"]
+
+[node name="GUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="QuestionBG" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_omvyj")
+expand_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 584.0
+offset_top = 180.0
+offset_right = 1124.0
+offset_bottom = 580.0
+color = Color(0.252028, 0.252028, 0.252028, 0.933333)
+
+[node name="QuestionContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="QuestionText" type="RichTextLabel" parent="ColorRect/QuestionContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "QuestionText"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="spacing" type="RichTextLabel" parent="ColorRect/QuestionContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AnswerA" type="RichTextLabel" parent="ColorRect/QuestionContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "AnswerA"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="AnswerB" type="RichTextLabel" parent="ColorRect/QuestionContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "AnswerB"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="AnswerC" type="RichTextLabel" parent="ColorRect/QuestionContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "AnswerC"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="AnswerD" type="RichTextLabel" parent="ColorRect/QuestionContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "AnswerD"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="ImageRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 21.0
+offset_top = 156.0
+offset_right = 561.0
+offset_bottom = 556.0
+color = Color(0.252028, 0.252028, 0.252028, 0.933333)

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://wj0jg37461ob"]
+
+[ext_resource type="Script" uid="uid://bl16oq4dsrnow" path="res://Scripts/Managers/ManagerGame.cs" id="1_kyw45"]
+
+[node name="ManagerGame" type="Control" node_paths=PackedStringArray("SceneFader")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_kyw45")
+SceneFader = NodePath("")
