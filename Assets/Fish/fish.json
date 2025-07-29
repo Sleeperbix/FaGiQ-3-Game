@@ -14,7 +14,7 @@
             "AnswerB": "Jewel Tetra",
             "AnswerC": "Royal Tetra",
             "AnswerD": "Zebra Tetra",
-            "CorrectAnswer": "Zebra Tetra",
+            "CorrectAnswer": "D",
             "AnswerFact": "The Zebra Tetra is not a real fish, while the other three are recognised types of tetras commonly found in the aquarium trade.",
             "QuestionImage": "Fish/Images/neontetra.jpg",
             "Tags": ["Fish", "Freshwater"]
@@ -25,7 +25,7 @@
             "AnswerB": "King Mackerel",
             "AnswerC": "Atlantic Sailfish",
             "AnswerD": "Wahoo",
-            "CorrectAnswer": "Atlantic Blue Marlin",
+            "CorrectAnswer": "A",
             "AnswerFact": "The Atlantic Bluemarlin can grow up to 14 feet long, and weigh nearly 2,000 pounds. Both the Sailfish and Blue Marlin belong to the Istiophoriformes order, which also includes the closely related Swordfish.",
             "QuestionImage": "Fish/Images/bluemarlin.jpg",
             "Tags": ["Fish", "Saltwater"]

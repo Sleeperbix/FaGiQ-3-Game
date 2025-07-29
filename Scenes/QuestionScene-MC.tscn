@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://m84vkrft0fjd"]
+[gd_scene load_steps=8 format=3 uid="uid://m84vkrft0fjd"]
 
 [ext_resource type="PackedScene" uid="uid://wj0jg37461ob" path="res://Prefabs/Managers/ManagerGame.tscn" id="1_r11bl"]
 [ext_resource type="PackedScene" uid="uid://dr024j8qw11ud" path="res://Prefabs/SceneFader.tscn" id="2_41828"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dwldkksxvb7b0" path="res://Prefabs/Managers/ManagerAudio.tscn" id="2_wylsq"]
 [ext_resource type="PackedScene" uid="uid://bnflbr02bvfpl" path="res://Prefabs/GUI-MCQuestion.tscn" id="3_aygaf"]
 [ext_resource type="PackedScene" uid="uid://d2d35sub2p3wp" path="res://Prefabs/TopBar.tscn" id="3_igyxs"]
+[ext_resource type="Script" uid="uid://dd4d3mdn8vdir" path="res://Scripts/RevealAnswerButton.cs" id="6_kxunx"]
 
 [node name="QuestionScene-mc" type="Control"]
 layout_mode = 3
@@ -28,10 +29,15 @@ layout_mode = 1
 
 [node name="TopBar" parent="." instance=ExtResource("3_igyxs")]
 layout_mode = 1
+offset_bottom = -797.0
 
 [node name="ButtonLeft" parent="TopBar" index="1"]
 ManagerPath = NodePath("../../ManagerGame")
 targetScene = "res://Scenes/QuestionSelectionScene.tscn"
+
+[node name="ButtonLeft2" parent="TopBar" index="2" node_paths=PackedStringArray("managerQuestionPath")]
+script = ExtResource("6_kxunx")
+managerQuestionPath = NodePath("../../ManagerQuestionRoom")
 
 [node name="SceneFader" parent="." instance=ExtResource("2_41828")]
 

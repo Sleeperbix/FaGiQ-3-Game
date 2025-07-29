@@ -14,8 +14,8 @@
             "AnswerB": "Great Expectations",
             "AnswerC": "Oliver Twist",
             "AnswerD": "Our Mutual Friend",
-            "CorrectAnswer": "Great Expectations",
-            "AnswerFact": "Published in 1861, Great Expectations is the 13th novel by English author Charles Dickens, and his penultimate completed novel.",
+            "CorrectAnswer": "B",
+            "AnswerFact": "Published in 1861, Great Expectations is the 13th novel by English author Charles Dickens, and is his penultimate completed novel.",
             "QuestionImage": "Literature/Images/charlesdickens.jpg",
             "Tags": ["Literature", "Charles Dickens"]
         },
@@ -25,7 +25,7 @@
             "AnswerB": "The Murder on the Links",
             "AnswerC": "The Mysterious Affair at Styles",
             "AnswerD": "The Mystery of the Blue Train",
-            "CorrectAnswer": "The Mysterious Affair at Styles",
+            "CorrectAnswer": "C",
             "AnswerFact": "Written in 1916 and published in 1920, The Mysterious Affair at Styles is the first detective novel by British writer Agatha Christie, introducing her fictional detective Hercule Poirot.",            
             "QuestionImage": "Literature/Images/poirot.jpg",
             "Tags": ["Literature", "Agatha Christie", "Poirot"]
