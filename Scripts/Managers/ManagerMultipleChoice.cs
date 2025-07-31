@@ -18,6 +18,7 @@ public partial class ManagerMultipleChoice : Node
 	{
 		InitializeButtons();
 		ReadMasterFile();
+		// If allQuestionsPool is less than 7, run CreateQuestionPool. Otherwise, ignore.
 		CreateQuestionPool();
 		SetQuestionsToButtons();
 		ManagerAudio.Instance.PlayMusicLoop("res://Audio/SystemBG/Setup and Kart Select - Mario Kart 64.mp3");
@@ -125,28 +126,41 @@ public partial class ManagerMultipleChoice : Node
 
 	private void CreateQuestionPool()
 	{
-		// Shuffle allQuestionsMaster into a new random order called allQuestionsPool. This list will be where the questions are picked from for the buttons.
-		var rng = new Random();
+		//var rng = new Random();
 		allQuestionsPool = new List<C_QuestionMultipleChoice>(allQuestionsMaster);
-		allQuestionsPool.Sort((a, b) => rng.Next(-1, 2)); // Random shuffle ?		
+		//allQuestionsPool.Sort((a, b) => rng.Next(-1, 2)); // Random shuffle ?		
 	}
 	private void SetQuestionsToButtons()
 	{
-		if (allQuestionsMaster.Count < buttons.Count)
+		if (allQuestionsPool.Count < buttons.Count)
 		{
-			GD.PrintErr("Not enough questions to fill all buttons.");
-			// TODO: Refill allQuestionsPool from allQuestionsMaster and reshuffle.
-			// e.g. RefillQuestions();
-			return;
+			GD.Print("Refilling questions...");
+			CreateQuestionPool();
 		}
-		for (int i = 0; i < buttons.Count; i++)
+		int questionCount = allQuestionsPool.Count;
+		List<int> pickedQuestions = new();
+		var rng = new Random();
+		int numberToPick = buttons.Count; // Set this to 8? Depends on how many buttons we will have, probably set as 8.
+		while (pickedQuestions.Count < numberToPick)
 		{
-			var question = allQuestionsPool[i];
+			int randomIndex = rng.Next(0, questionCount);
+			if (!pickedQuestions.Contains(randomIndex))
+			{
+				pickedQuestions.Add(randomIndex);
+			}
+		}
+		for (int i = 0; i < pickedQuestions.Count; i++)
+		{
+		int index = pickedQuestions[i];
+			var question = allQuestionsPool[index];
 			var button = buttons[i];
 			GD.Print($"Current Button: {buttons[i]}");
 
-			button.Text = question.CategoryTitle;
-			button.AddThemeColorOverride("font_color", question.ButtonTextColour);
+			var label = button.GetNode<RichTextLabel>("RichTextLabel");
+			//label.Text = question.CategoryTitle;
+			label.Text = $"[color={question.ButtonTextColour.ToHtml()}]{question.CategoryTitle}";
+			//button.Text = question.CategoryTitle;
+			//button.AddThemeColorOverride("font_color", question.ButtonTextColour);
 			var stylebox = new StyleBoxFlat();
 			stylebox.BgColor = question.ButtonBGColour;
 			button.AddThemeStyleboxOverride("normal", stylebox);

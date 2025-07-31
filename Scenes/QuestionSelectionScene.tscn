@@ -32,5 +32,6 @@ layout_mode = 1
 visible = false
 
 [node name="SceneFader" parent="." instance=ExtResource("4_dig23")]
+visible = false
 
 [editable path="TopBar"]

@@ -40,5 +40,6 @@ script = ExtResource("6_kxunx")
 managerQuestionPath = NodePath("../../ManagerQuestionRoom")
 
 [node name="SceneFader" parent="." instance=ExtResource("2_41828")]
+visible = false
 
 [editable path="TopBar"]

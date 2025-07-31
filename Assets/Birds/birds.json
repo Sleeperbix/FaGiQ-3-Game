@@ -3,7 +3,7 @@
         "CategoryTitle": "Birds",
         "BGImage": "Birds/Images/background-birds.jpg",
         "BGMusic": "Birds/Sounds/music-birds.mp3",
-        "SelectionSound": "Birds/Sounds/select-dogs.wav",
+        "SelectionSound": "Birds/Sounds/select-birds.wav",
         "ButtonTextColour": "#000000",
         "ButtonBGColour": "#ede9d3"
     },
