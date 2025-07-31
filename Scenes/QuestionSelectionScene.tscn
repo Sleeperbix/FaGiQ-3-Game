@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dm82ebv3yv7nu"]
+[gd_scene load_steps=7 format=3 uid="uid://dm82ebv3yv7nu"]
 
 [ext_resource type="PackedScene" uid="uid://dr0a3642i4krl" path="res://Prefabs/QuestionButtonBar.tscn" id="1_0u456"]
 [ext_resource type="PackedScene" uid="uid://wj0jg37461ob" path="res://Prefabs/Managers/ManagerGame.tscn" id="1_yotfa"]
+[ext_resource type="PackedScene" uid="uid://dwldkksxvb7b0" path="res://Prefabs/Managers/ManagerAudio.tscn" id="2_us5sn"]
 [ext_resource type="PackedScene" uid="uid://dglhgklsv0skn" path="res://Prefabs/Managers/ManagerMultipleChoice.tscn" id="2_yotfa"]
 [ext_resource type="PackedScene" uid="uid://dr024j8qw11ud" path="res://Prefabs/SceneFader.tscn" id="4_dig23"]
 [ext_resource type="PackedScene" uid="uid://d2d35sub2p3wp" path="res://Prefabs/TopBar.tscn" id="5_uwgn8"]
@@ -16,14 +17,20 @@ grow_vertical = 2
 
 [node name="ManagerGame" parent="." instance=ExtResource("1_yotfa")]
 
-[node name="QuestionButtonBar" parent="." instance=ExtResource("1_0u456")]
-layout_mode = 1
+[node name="ManagerAudio" parent="." instance=ExtResource("2_us5sn")]
 
 [node name="ManagerMultipleChoice" parent="." node_paths=PackedStringArray("QuestionButtonBarNode") instance=ExtResource("2_yotfa")]
 QuestionButtonBarNode = NodePath("../QuestionButtonBar")
 
-[node name="SceneFader" parent="." instance=ExtResource("4_dig23")]
+[node name="QuestionButtonBar" parent="." instance=ExtResource("1_0u456")]
+layout_mode = 1
 
 [node name="TopBar" parent="." instance=ExtResource("5_uwgn8")]
-visible = false
 layout_mode = 1
+
+[node name="ButtonLeft2" parent="TopBar" index="2"]
+visible = false
+
+[node name="SceneFader" parent="." instance=ExtResource("4_dig23")]
+
+[editable path="TopBar"]

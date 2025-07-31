@@ -12,7 +12,7 @@ public partial class SceneButton : Button
     }
     private void OnButtonPressed()
     {
-        GD.Print("You pressed me!");
+        ManagerAudio.Instance.PlaySFX("res://Audio/SystemSFX/Button.wav");
         ManagerGame.Instance.TransitionToScene(targetScene);
     }
 }

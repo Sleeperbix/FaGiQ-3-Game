@@ -23,12 +23,47 @@ mouse_filter = 2
 texture = ExtResource("1_omvyj")
 expand_mode = 3
 
+[node name="FactRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -200.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.25098, 0.25098, 0.25098, 0.933333)
+
+[node name="FactText" type="RichTextLabel" parent="FactRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 58
+text = "FactText"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_ecurw")
+_current_font_size = 58
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
+
 [node name="QuestionRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 581.0
-offset_top = 128.0
-offset_right = 1400.0
-offset_bottom = 234.0
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 100.0
+offset_bottom = 200.0
+grow_horizontal = 2
 color = Color(0.25098, 0.25098, 0.25098, 0.933333)
 
 [node name="QuestionText" type="RichTextLabel" parent="QuestionRect"]
@@ -43,13 +78,13 @@ offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 62
+theme_override_font_sizes/normal_font_size = 58
 text = "QuestionText"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_ecurw")
-_current_font_size = 62
+_current_font_size = 58
 _editor_defaults_set = true
 metadata/_custom_type_script = "uid://co0lo02vnu10n"
 

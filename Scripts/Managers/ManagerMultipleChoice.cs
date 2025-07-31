@@ -20,6 +20,7 @@ public partial class ManagerMultipleChoice : Node
 		ReadMasterFile();
 		CreateQuestionPool();
 		SetQuestionsToButtons();
+		ManagerAudio.Instance.PlayMusicLoop("res://Audio/SystemBG/Setup and Kart Select - Mario Kart 64.mp3");
 	}
 	private void InitializeButtons()
 	{
@@ -169,6 +170,8 @@ public partial class ManagerMultipleChoice : Node
 		allQuestionsPool.Remove(question);
 
 		ManagerGame.Instance.SetSelectedQuestion(question);
+		ManagerAudio.Instance.PlaySFX("res://Audio/SystemSFX/Button.wav");
+		ManagerAudio.Instance.PlaySFX("res://Assets/" + question.SelectionSound);
 		ManagerGame.Instance.TransitionToScene("res://Scenes/QuestionScene-MC.tscn");
 
 		// For now just log

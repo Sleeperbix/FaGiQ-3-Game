@@ -11,6 +11,7 @@ public partial class RevealAnswerButton : Button
     }
     private void OnButtonPressed()
     {
+        ManagerAudio.Instance.PlaySFX("res://Audio/SystemSFX/Reveal.wav");
         managerQuestionPath.RevealAnswer();
     }
 }

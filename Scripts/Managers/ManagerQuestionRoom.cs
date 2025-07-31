@@ -14,6 +14,8 @@ public partial class ManagerQuestionRoom : Control
 	private RichTextLabel guiAnswerB;
 	private RichTextLabel guiAnswerC;
 	private RichTextLabel guiAnswerD;
+	private RichTextLabel guiFact;
+	private ColorRect guiFactBG;
 	private TextureRect guiQuestionImage;
 	private TextureRect guiQuestionBG;
 
@@ -32,7 +34,8 @@ public partial class ManagerQuestionRoom : Control
 		guiAnswerB = questionGUI.GetNode<RichTextLabel>("AnswerRect/QuestionContainer/AnswerB");
 		guiAnswerC = questionGUI.GetNode<RichTextLabel>("AnswerRect/QuestionContainer/AnswerC");
 		guiAnswerD = questionGUI.GetNode<RichTextLabel>("AnswerRect/QuestionContainer/AnswerD");
-		//guiAnswerFact
+		guiFact = questionGUI.GetNode<RichTextLabel>("FactRect/FactText");
+		guiFactBG = questionGUI.GetNode<ColorRect>("FactRect");
 		guiQuestionImage = questionGUI.GetNode<TextureRect>("ImageRect/QuestionImage");
 		guiQuestionBG = questionGUI.GetNode<TextureRect>("QuestionBG");
 
@@ -43,7 +46,8 @@ public partial class ManagerQuestionRoom : Control
 		guiAnswerB.Text = "[B]  -  " + question.AnswerB;
 		guiAnswerC.Text = "[C]  -  " + question.AnswerC;
 		guiAnswerD.Text = "[D]  -  " + question.AnswerD;
-		//guiAnswerFact
+		guiFact.Text = question.AnswerFact;
+		guiFactBG.Visible = false;
 
 		string imagePath_QuestionImage = "res://Assets/" + question.QuestionImage;
 		Texture2D imageTexture_QuestionImage = GD.Load<Texture2D>(imagePath_QuestionImage);
@@ -51,36 +55,28 @@ public partial class ManagerQuestionRoom : Control
 
 		string imagePath_BGImage = "res://Assets/" + question.BGImage;
 		Texture2D imageTexture_BGImage = GD.Load<Texture2D>(imagePath_BGImage);
-		//GD.Print(imagePath_BGImage);
 		guiQuestionBG.Texture = imageTexture_BGImage;
-
 
 		string musicPath = "res://Assets/" + question.BGMusic;
 		ManagerAudio.Instance.PlayMusicLoop(musicPath);
 
+		// if (question != null)
+		// {
+		// 	GD.Print("Loaded question category: " + question.CategoryTitle);
+		// }
+		// else
+		// {
+		// 	GD.Print("SelectedQuestion is null!");
+		// }
 
-
-
-		if (question != null)
-		{
-			GD.Print("Loaded question category: " + question.CategoryTitle);
-		}
-		else
-		{
-			GD.Print("SelectedQuestion is null!");
-		}
-
-		if (questionGUI != null)
-		{
-			GD.Print("Found Question GUI");
-		}
-
-
+		// if (questionGUI != null)
+		// {
+		// 	GD.Print("Found Question GUI");
+		// }
 	}
 
 	public void RevealAnswer()
 	{
-		GD.Print("You pressed the button, and the manager answered");
 		Dictionary<string, RichTextLabel> answerLabels = new()
 		{
 			{ "A", guiAnswerA },
@@ -90,13 +86,28 @@ public partial class ManagerQuestionRoom : Control
 		};
 
 		string correctAnswer = question.CorrectAnswer.ToUpper();
-		
-		foreach (var kvp in answerLabels)
+
+		foreach (var answer in answerLabels)
 		{
-			if (kvp.Key == correctAnswer)
-				kvp.Value.Modulate = new Color(1, 1, 1, 1);
+			if (answer.Key == correctAnswer)
+				answer.Value.Modulate = new Color(1, 1, 1, 1);
 			else
-				kvp.Value.Modulate = new Color(1, 1, 1, 0.3f);
+				answer.Value.Modulate = new Color(1, 1, 1, 0.1f);
 		}
+		guiFactBG.Visible = true;
+		TypeFact(question.AnswerFact);
+	}
+
+	public async void TypeFact(string text)
+	{
+		guiFact.Text = "";
+
+		foreach (char c in text)
+		{
+			guiFact.Text += c;
+			await ToSignal(GetTree().CreateTimer(0.03f), "timeout");
+		}
+
+
 	}
 }
