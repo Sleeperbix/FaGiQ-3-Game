@@ -5,7 +5,8 @@
         "BGMusic": "Science/Sounds/music-science.mp3",
         "SelectionSound": "Science/Sounds/select-science.wav",
         "ButtonTextColour": "#ffffff",
-        "ButtonBGColour": "#3240a8"
+        "ButtonBGColour": "#3240a8",
+        "Author" : ""
     },
     "Questions": [
         {
@@ -17,7 +18,8 @@
             "CorrectAnswer": "A",
             "AnswerFact": "Gamma Rays have the shortest wavelength of the electromagnetic spectrum, typically less than 0.01 nanometers. Ascending in length, the order is Gamma Rays, X-Rays, Ultraviolet, Visible Light, Infrared, Microwaves, and Radio Waves.",
             "QuestionImage": "Science/Images/spectrum.jpg",
-            "Tags": ["Science", "Physics"]
+            "Tags": ["Science", "Physics"],
+            "Sources" : ["", ""]
         },
         {
             "QuestionText": "What does a Gauss Meter measure?",
@@ -28,7 +30,8 @@
             "CorrectAnswer": "A",
             "AnswerFact": "A Gauss Meter, also known as a Magnetometer, is a device used to measure the strength and direction of a magnetic field. Radiation is measured with a Geiger Counter, whilst the other two answers don't have a specific tool for measuring them.",
             "QuestionImage": "Science/Images/rulers.jpg",
-            "Tags": ["Science", "Physics"]
+            "Tags": ["Science", "Physics"],
+            "Sources" : ["", ""]
         }
     ]
 }

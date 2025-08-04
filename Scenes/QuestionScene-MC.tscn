@@ -31,6 +31,11 @@ layout_mode = 1
 layout_mode = 1
 offset_bottom = -797.0
 
+[node name="TopBarText" parent="TopBar/TopBarBG" index="0"]
+theme_override_font_sizes/normal_font_size = 58
+_max_size = 60
+_current_font_size = 58
+
 [node name="ButtonLeft" parent="TopBar" index="1"]
 ManagerPath = NodePath("../../ManagerGame")
 targetScene = "res://Scenes/QuestionSelectionScene.tscn"
@@ -40,6 +45,5 @@ script = ExtResource("6_kxunx")
 managerQuestionPath = NodePath("../../ManagerQuestionRoom")
 
 [node name="SceneFader" parent="." instance=ExtResource("2_41828")]
-visible = false
 
 [editable path="TopBar"]

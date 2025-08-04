@@ -5,7 +5,8 @@
         "BGMusic": "Fish/Sounds/music-fish.mp3",
         "SelectionSound": "Fish/Sounds/select-fish.wav",
         "ButtonTextColour": "#dcf5ef",
-        "ButtonBGColour": "#0ad0f7"
+        "ButtonBGColour": "#0ad0f7",
+        "Author" : ""
     },
     "Questions": [
         {
@@ -17,7 +18,8 @@
             "CorrectAnswer": "D",
             "AnswerFact": "The Zebra Tetra is not a real fish, while the other three are recognised types of tetras commonly found in the aquarium trade.",
             "QuestionImage": "Fish/Images/neontetra.jpg",
-            "Tags": ["Fish", "Freshwater"]
+            "Tags": ["Fish", "Freshwater"],
+            "Sources" : ["", ""]
         },
         {
             "QuestionText": "What type of fish is pictured here?",
@@ -28,7 +30,8 @@
             "CorrectAnswer": "A",
             "AnswerFact": "The Atlantic Blue Marlin can grow up to 14 feet long, and weigh nearly 2,000 pounds. Both the Sailfish and Blue Marlin belong to the Istiophoriformes order, which also includes the closely related Swordfish.",
             "QuestionImage": "Fish/Images/bluemarlin.jpg",
-            "Tags": ["Fish", "Saltwater"]
+            "Tags": ["Fish", "Saltwater"],
+            "Sources" : ["", ""]
         }
     ]
 }
