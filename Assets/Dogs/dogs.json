@@ -5,7 +5,8 @@
         "BGMusic": "Dogs/Sounds/music-dogs.mp3",
         "SelectionSound": "Dogs/Sounds/select-dogs.wav",
         "ButtonTextColour": "#000000",
-        "ButtonBGColour": "#cfcfcf"
+        "ButtonBGColour": "#cfcfcf",
+        "Author" : ""
     },
     "Questions": [
         {
@@ -14,10 +15,11 @@
             "AnswerB": "German Pointer",
             "AnswerC": "Great Dane",
             "AnswerD": "Springer Spaniel",
-            "CorrectAnswer": "German Pointer",
+            "CorrectAnswer": "B",
             "AnswerFact": "The German Shorthaired Pointer (or Deutsch Kurzhaar) is of medium size, and is an all-purpose gun dog suitable for hunting and retrieving on both land and water.",
             "QuestionImage": "Dogs/Images/germanpointer.jpg",
-            "Tags": ["Dogs"]
+            "Tags": ["Dogs"],
+            "Sources" : ["", ""]
         },
         {
             "QuestionText": "How many teeth does an adult dog typically have?",
@@ -25,10 +27,11 @@
             "AnswerB": "40",
             "AnswerC": "42",
             "AnswerD": "44",
-            "CorrectAnswer": "42",
+            "CorrectAnswer": "C",
             "AnswerFact": "Adult dogs typically have 42 teeth arranged in a pattern optimised for their omnivorous diet. Their teeth consist of 12 incisors, 4 canines, 16 premolars and 10 molars.",
             "QuestionImage": "Dogs/Images/dogteeth.jpg",
-            "Tags": ["Dogs", "Teeth"]
+            "Tags": ["Dogs", "Teeth"],
+            "Sources" : ["", ""]
         }        
     ]
 }

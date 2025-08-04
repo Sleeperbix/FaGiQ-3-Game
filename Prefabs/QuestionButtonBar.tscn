@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dr0a3642i4krl"]
+[gd_scene load_steps=3 format=3 uid="uid://dr0a3642i4krl"]
+
+[ext_resource type="Script" uid="uid://co0lo02vnu10n" path="res://addons/font_auto_size_labels/auto_size_rich_text_label.gd" id="1_ftl43"]
 
 [sub_resource type="Theme" id="Theme_jdq4n"]
 
@@ -7,16 +9,18 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 620.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.799
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 0.111969
+offset_top = -250.0
+offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -25,30 +29,221 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme = SubResource("Theme_jdq4n")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Button1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 37
+bbcode_enabled = true
+text = "Goodbye"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_ftl43")
+_max_size = 40
+_current_font_size = 37
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
+
 [node name="Button2" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = SubResource("Theme_jdq4n")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Button2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 39
+bbcode_enabled = true
+text = "Stranger"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_ftl43")
+_max_size = 40
+_current_font_size = 39
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
 
 [node name="Button3" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = SubResource("Theme_jdq4n")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Button3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 39
+bbcode_enabled = true
+text = "It's Been"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_ftl43")
+_max_size = 40
+_current_font_size = 39
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
 
 [node name="Button4" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = SubResource("Theme_jdq4n")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Button4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "Nice"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_ftl43")
+_max_size = 40
+_current_font_size = 40
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
 
 [node name="Button5" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = SubResource("Theme_jdq4n")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Button5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "Hope"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_ftl43")
+_max_size = 40
+_current_font_size = 40
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
 
 [node name="Button6" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = SubResource("Theme_jdq4n")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Button6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "You"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_ftl43")
+_max_size = 40
+_current_font_size = 40
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
 
 [node name="Button7" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = SubResource("Theme_jdq4n")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Button7"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "Find Your"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_ftl43")
+_max_size = 40
+_current_font_size = 35
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
 
 [node name="Button8" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = SubResource("Theme_jdq4n")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Button8"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 39
+bbcode_enabled = true
+text = "Paradise"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_ftl43")
+_max_size = 40
+_current_font_size = 39
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"

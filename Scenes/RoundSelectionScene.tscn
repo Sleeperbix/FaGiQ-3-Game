@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8pp0tm0hgqd7"]
+
+[ext_resource type="PackedScene" uid="uid://wj0jg37461ob" path="res://Prefabs/Managers/ManagerGame.tscn" id="1_iemcu"]
+[ext_resource type="PackedScene" uid="uid://dwldkksxvb7b0" path="res://Prefabs/Managers/ManagerAudio.tscn" id="2_aabov"]
+[ext_resource type="PackedScene" uid="uid://dr024j8qw11ud" path="res://Prefabs/SceneFader.tscn" id="3_w5krt"]
+[ext_resource type="PackedScene" uid="uid://d2d35sub2p3wp" path="res://Prefabs/TopBar.tscn" id="4_3ed1i"]
+
+[node name="RoundSelectionScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ManagerGame" parent="." instance=ExtResource("1_iemcu")]
+
+[node name="ManagerAudio" parent="." instance=ExtResource("2_aabov")]
+
+[node name="SceneFader" parent="." instance=ExtResource("3_w5krt")]
+visible = false
+
+[node name="TopBar" parent="." instance=ExtResource("4_3ed1i")]
+layout_mode = 1
+offset_bottom = -772.0
+
+[node name="TopBarText" parent="TopBar/TopBarBG" index="0"]
+theme_override_font_sizes/normal_font_size = 58
+text = "ROUND SELECTION"
+_max_size = 60
+_current_font_size = 58
+
+[node name="ButtonLeft2" parent="TopBar" index="2"]
+visible = false
+
+[editable path="TopBar"]

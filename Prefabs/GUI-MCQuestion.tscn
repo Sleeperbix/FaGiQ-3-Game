@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnflbr02bvfpl"]
+[gd_scene load_steps=3 format=3 uid="uid://bnflbr02bvfpl"]
 
 [ext_resource type="Texture2D" uid="uid://v6la1f1vbkir" path="res://Assets/00Default/image_test.jpg" id="1_omvyj"]
+[ext_resource type="Script" uid="uid://co0lo02vnu10n" path="res://addons/font_auto_size_labels/auto_size_rich_text_label.gd" id="2_ecurw"]
 
 [node name="GUI" type="Control"]
 layout_mode = 3
@@ -18,18 +19,91 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("1_omvyj")
 expand_mode = 3
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 584.0
-offset_top = 180.0
-offset_right = 1124.0
-offset_bottom = 580.0
+[node name="FactRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -200.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.25098, 0.25098, 0.25098, 0.933333)
+
+[node name="FactText" type="RichTextLabel" parent="FactRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 58
+text = "FactText"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_ecurw")
+_current_font_size = 58
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
+
+[node name="QuestionRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 100.0
+offset_bottom = 200.0
+grow_horizontal = 2
+color = Color(0.25098, 0.25098, 0.25098, 0.933333)
+
+[node name="QuestionText" type="RichTextLabel" parent="QuestionRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 58
+text = "QuestionText"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_ecurw")
+_current_font_size = 58
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
+
+[node name="AnswerRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -200.0
+offset_right = -40.0
+offset_bottom = 200.0
+grow_horizontal = 0
+grow_vertical = 2
 color = Color(0.252028, 0.252028, 0.252028, 0.933333)
 
-[node name="QuestionContainer" type="VBoxContainer" parent="ColorRect"]
+[node name="QuestionContainer" type="VBoxContainer" parent="AnswerRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -41,50 +115,86 @@ offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="QuestionText" type="RichTextLabel" parent="ColorRect/QuestionContainer"]
+[node name="AnswerA" type="RichTextLabel" parent="AnswerRect/QuestionContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "QuestionText"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="spacing" type="RichTextLabel" parent="ColorRect/QuestionContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="AnswerA" type="RichTextLabel" parent="ColorRect/QuestionContainer"]
-layout_mode = 2
-size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 30
 text = "AnswerA"
-fit_content = true
+scroll_active = false
 horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_ecurw")
+_max_size = 30
+_current_font_size = 30
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
 
-[node name="AnswerB" type="RichTextLabel" parent="ColorRect/QuestionContainer"]
+[node name="AnswerB" type="RichTextLabel" parent="AnswerRect/QuestionContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 30
 text = "AnswerB"
-fit_content = true
+scroll_active = false
 horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_ecurw")
+_max_size = 30
+_current_font_size = 30
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
 
-[node name="AnswerC" type="RichTextLabel" parent="ColorRect/QuestionContainer"]
+[node name="AnswerC" type="RichTextLabel" parent="AnswerRect/QuestionContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 30
 text = "AnswerC"
-fit_content = true
+scroll_active = false
 horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_ecurw")
+_max_size = 30
+_current_font_size = 30
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
 
-[node name="AnswerD" type="RichTextLabel" parent="ColorRect/QuestionContainer"]
+[node name="AnswerD" type="RichTextLabel" parent="AnswerRect/QuestionContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 30
 text = "AnswerD"
-fit_content = true
+scroll_active = false
 horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_ecurw")
+_max_size = 30
+_current_font_size = 30
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
 
 [node name="ImageRect" type="ColorRect" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 21.0
-offset_top = 156.0
-offset_right = 561.0
-offset_bottom = 556.0
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = -250.0
+offset_right = 540.0
+offset_bottom = 250.0
+grow_vertical = 2
 color = Color(0.252028, 0.252028, 0.252028, 0.933333)
+
+[node name="QuestionImage" type="TextureRect" parent="ImageRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -225.0
+offset_right = 225.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_omvyj")
+expand_mode = 1
