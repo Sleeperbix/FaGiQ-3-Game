@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8pp0tm0hgqd7"]
+[gd_scene load_steps=6 format=3 uid="uid://b8pp0tm0hgqd7"]
 
 [ext_resource type="PackedScene" uid="uid://wj0jg37461ob" path="res://Prefabs/Managers/ManagerGame.tscn" id="1_iemcu"]
 [ext_resource type="PackedScene" uid="uid://dwldkksxvb7b0" path="res://Prefabs/Managers/ManagerAudio.tscn" id="2_aabov"]
+[ext_resource type="PackedScene" uid="uid://d1elxp4i8qqb3" path="res://Prefabs/RoundSelection.tscn" id="3_3ed1i"]
 [ext_resource type="PackedScene" uid="uid://dr024j8qw11ud" path="res://Prefabs/SceneFader.tscn" id="3_w5krt"]
 [ext_resource type="PackedScene" uid="uid://d2d35sub2p3wp" path="res://Prefabs/TopBar.tscn" id="4_3ed1i"]
 
@@ -17,8 +18,12 @@ grow_vertical = 2
 
 [node name="ManagerAudio" parent="." instance=ExtResource("2_aabov")]
 
-[node name="SceneFader" parent="." instance=ExtResource("3_w5krt")]
-visible = false
+[node name="RoundSelection" parent="." instance=ExtResource("3_3ed1i")]
+layout_mode = 1
+
+[node name="ButtonMultipleChoice" parent="RoundSelection/ColorRect/VBoxContainer" index="0"]
+ManagerPath = NodePath("../../../../ManagerGame")
+targetScene = "res://Scenes/QuestionSelectionScene.tscn"
 
 [node name="TopBar" parent="." instance=ExtResource("4_3ed1i")]
 layout_mode = 1
@@ -33,4 +38,7 @@ _current_font_size = 58
 [node name="ButtonLeft2" parent="TopBar" index="2"]
 visible = false
 
+[node name="SceneFader" parent="." instance=ExtResource("3_w5krt")]
+
+[editable path="RoundSelection"]
 [editable path="TopBar"]

@@ -1,0 +1,84 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3w4ptb81ifhy"]
+
+[ext_resource type="Script" uid="uid://co0lo02vnu10n" path="res://addons/font_auto_size_labels/auto_size_rich_text_label.gd" id="1_g45v7"]
+
+[node name="QuestionTimer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -450.0
+offset_right = 100.0
+offset_bottom = -290.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.25098, 0.25098, 0.25098, 0.933333)
+
+[node name="Timer" type="Timer" parent="ColorRect"]
+
+[node name="Button" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -55.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="ColorRect/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "Start Timer"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_g45v7")
+_max_size = 30
+_current_font_size = 30
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
+
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 100.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 60
+text = "00:00"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_g45v7")
+_max_size = 60
+_current_font_size = 60
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
