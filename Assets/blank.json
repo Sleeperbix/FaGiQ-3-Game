@@ -5,7 +5,8 @@
         "BGMusic": "",
         "SelectionSound": "",
         "ButtonTextColour": "#000000",
-        "ButtonBGColour": "#ffffff"
+        "ButtonBGColour": "#ffffff",
+        "Author" : ""
     },
     "Questions": [
         {
@@ -17,7 +18,8 @@
             "CorrectAnswer": "",
             "AnswerFact": "",
             "QuestionImage": "",
-            "Tags": [""]
+            "Tags": [""],
+            "Sources" : ["", ""]
         }
     ]
 }

@@ -6,7 +6,8 @@
         "SelectionSound": "Birds/Sounds/select-birds.wav",
         "ButtonTextColour": "#000000",
         "ButtonBGColour": "#ede9d3",
-        "Author" : ""
+        "Author" : "Sleeperbix",
+        "Summary" : "Questions from FaGiQ 1 & 2"
     },
     "Questions": [
         {

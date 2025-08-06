@@ -55,20 +55,24 @@ public partial class ManagerQuestionRoom : Control
 		guiFact.Text = question.AnswerFact;
 		guiFactBG.Visible = false;
 
+		
 		string imagePath_QuestionImage = "res://Assets/" + question.QuestionImage;
 		Texture2D imageTexture_QuestionImage = GD.Load<Texture2D>(imagePath_QuestionImage);
+		if (imageTexture_QuestionImage == null) { imageTexture_QuestionImage = GD.Load<Texture2D>("res://Assets/00Default/questionimage.png"); }
 		guiQuestionImage.Texture = imageTexture_QuestionImage;
-
+		
 		string imagePath_BGImage = "res://Assets/" + question.BGImage;
 		Texture2D imageTexture_BGImage = GD.Load<Texture2D>(imagePath_BGImage);
+		if (imageTexture_BGImage == null) { imageTexture_BGImage = GD.Load<Texture2D>("res://Assets/00Default/questionbackground.jpg"); }
 		guiQuestionBG.Texture = imageTexture_BGImage;
 
 		string musicPath = "res://Assets/" + question.BGMusic;
-		ManagerAudio.Instance.PlayMusicLoop(musicPath);
+		if (!string.IsNullOrWhiteSpace(question.BGMusic) && FileAccess.FileExists(musicPath)) {ManagerAudio.Instance.PlayMusicLoop(musicPath);}
+		else {ManagerAudio.Instance.PlayMusicLoop("res://Assets/00Default/questionmusic.mp3");}
 
 		// Assign button and timer stuff
 
-		questionTimer.Timeout += TimerTick;
+			questionTimer.Timeout += TimerTick;
 		timerButton.Pressed += TimerStarted;
 		TimerReset();
 
