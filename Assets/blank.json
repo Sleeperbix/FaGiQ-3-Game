@@ -6,10 +6,12 @@
         "SelectionSound": "",
         "ButtonTextColour": "#000000",
         "ButtonBGColour": "#ffffff",
-        "Author" : ""
+        "Author" : "",
+        "Summary" : ""
     },
     "Questions": [
         {
+            "ID": "001",
             "QuestionText": "",
             "AnswerA": "",
             "AnswerB": "",
