@@ -30,16 +30,16 @@ layout_mode = 1
 offset_bottom = -772.0
 
 [node name="TopBarText" parent="TopBar/TopBarBG" index="0"]
-theme_override_font_sizes/normal_font_size = 60
+theme_override_font_sizes/normal_font_size = 58
 text = "ROUND SELECTION"
 _max_size = 60
-_current_font_size = 60
-_size_just_modified_by_autosizer = true
+_current_font_size = 58
 
 [node name="ButtonLeft2" parent="TopBar" index="2"]
 visible = false
 
 [node name="SceneFader" parent="." instance=ExtResource("3_w5krt")]
+visible = false
 
 [editable path="RoundSelection"]
 [editable path="TopBar"]

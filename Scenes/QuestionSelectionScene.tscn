@@ -33,11 +33,10 @@ layout_mode = 1
 layout_mode = 1
 
 [node name="TopBarText" parent="TopBar/TopBarBG" index="0"]
-theme_override_font_sizes/normal_font_size = 60
+theme_override_font_sizes/normal_font_size = 58
 text = "QUESTION SELECTION"
 _max_size = 60
-_current_font_size = 60
-_size_just_modified_by_autosizer = true
+_current_font_size = 58
 
 [node name="ButtonLeft" parent="TopBar" index="1"]
 ManagerPath = NodePath("../../ManagerGame")

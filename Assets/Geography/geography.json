@@ -7,7 +7,7 @@
         "ButtonTextColour": "#1dc2e4",
         "ButtonBGColour": "#118900",
         "Author" : "Sleeperbix",
-        "Summary" : "Questions from FaGiQ 1 & 2.\nMusic: Yakko's World - Keeper1st (https://www.youtube.com/watch?v=xjKPDTNba2g)\nBackground: Wallpapers HD Limited https://www.pinterest.com/pin/243546292340411537/" 
+        "Summary" : "The original Geography questions from FaGiQ 1 & 2, with some minor tweaks.\n\n\nCredits\nMusic: Yakko's World (Keeper1st) - https://www.youtube.com/watch?v=xjKPDTNba2g \nBackground: Wallpapers HD Limited - https://www.pinterest.com/pin/243546292340411537/" 
     },
     "Questions": [
         {
@@ -161,7 +161,7 @@
             "AnswerC": "Norway",
             "AnswerD": "The United States",
             "CorrectAnswer": "A",
-            "AnswerFact": "According to the CIA World Factbook, Canada has the world's longest coastline at around 202,080km (and the World Resources Institute has it as 265,523km). Second place varies depending on the source, but it is either Norway at 83,281km (CIA), or the U.S. at 133,312km (WRI)",
+            "AnswerFact": "According to the CIA World Factbook, Canada has the world's longest coastline at around 202,080km (and the World Resources Institute has it as 265,523km). Second place varies depending on the source, but it is either Norway at 83,281km (CIA), or the U.S. at 133,312km (WRI).",
             "QuestionImage": "Geography/Images/coastline.jpg",
             "Tags": ["Geography", "Coastlines"],
             "Sources" : ["Wikipedia", "CIA World Factbook", "World Resources Institute"]

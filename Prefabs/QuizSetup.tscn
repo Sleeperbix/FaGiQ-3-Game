@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck5euc4wvsbiq"]
+
+[ext_resource type="Script" uid="uid://co0lo02vnu10n" path="res://addons/font_auto_size_labels/auto_size_rich_text_label.gd" id="1_exyuj"]
+[ext_resource type="Script" uid="uid://b16im2olkd8vq" path="res://Scripts/CategoryImporter.cs" id="1_nvolv"]
+
+[node name="QuizSetup" type="Control" node_paths=PackedStringArray("statusLabel", "searchButton", "resultsBox", "infoLabel")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nvolv")
+statusLabel = NodePath("MarginContainer/VBoxContainer/AutoSizeRichTextlabel")
+searchButton = NodePath("MarginContainer/VBoxContainer/Button")
+resultsBox = NodePath("MarginContainer/VBoxContainer/FoundContainer")
+infoLabel = NodePath("Label")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 273.0
+offset_bottom = 604.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 40
+text = "text"
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("1_exyuj")
+_max_size = 40
+_min_size = 10
+_current_font_size = 40
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "Search for Categories"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_exyuj")
+_max_size = 50
+_min_size = 10
+_current_font_size = 50
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
+
+[node name="FoundContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 6
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 68.0
+offset_right = 854.0
+offset_bottom = 294.0
+text = "text"
