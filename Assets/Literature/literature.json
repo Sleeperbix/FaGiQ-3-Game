@@ -6,7 +6,8 @@
         "SelectionSound": "Literature/Sounds/select-literature.wav",
         "ButtonTextColour": "#ffffff",
         "ButtonBGColour": "#692717",
-        "Author" : ""
+        "Author" : "Sleeperbix",
+        "Summary" : "Questions from FaGiQ 1 & 2"
     },
     "Questions": [
         {

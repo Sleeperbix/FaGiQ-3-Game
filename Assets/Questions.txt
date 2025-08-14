@@ -3,3 +3,5 @@ Birds/birds.json
 Science/science.json
 Fish/fish.json
 Literature/literature.json
+History/history.json
+Geography/geography.json

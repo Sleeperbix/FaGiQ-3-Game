@@ -5,10 +5,13 @@
         "BGMusic": "",
         "SelectionSound": "",
         "ButtonTextColour": "#000000",
-        "ButtonBGColour": "#ffffff"
+        "ButtonBGColour": "#ffffff",
+        "Author" : "",
+        "Summary" : ""
     },
     "Questions": [
         {
+            "ID": "001",
             "QuestionText": "",
             "AnswerA": "",
             "AnswerB": "",
@@ -17,7 +20,8 @@
             "CorrectAnswer": "",
             "AnswerFact": "",
             "QuestionImage": "",
-            "Tags": [""]
+            "Tags": [""],
+            "Sources" : ["", ""]
         }
     ]
 }

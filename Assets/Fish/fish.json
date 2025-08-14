@@ -6,7 +6,8 @@
         "SelectionSound": "Fish/Sounds/select-fish.wav",
         "ButtonTextColour": "#dcf5ef",
         "ButtonBGColour": "#0ad0f7",
-        "Author" : ""
+        "Author" : "Sleeperbix",
+        "Summary" : "Questions from FaGiQ 1 & 2"
     },
     "Questions": [
         {

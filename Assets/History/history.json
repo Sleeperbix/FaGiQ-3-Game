@@ -1,0 +1,26 @@
+{
+    "Global": {
+        "CategoryTitle": "History",
+        "BGImage": "History/Images/background-history.jpg",
+        "BGMusic": "History/Sounds/music-history.mp3",
+        "SelectionSound": "History/Sounds/select-history.wav",
+        "ButtonTextColour": "#ffffff",
+        "ButtonBGColour": "#7C6F64",
+        "Author" : "Sleeperbix",
+        "Summary" : "The original History questions from FaGiQ 1 & 2, with some minor tweaks.\n\n\nCredits\nMusic: Civilization II - Augustus Rises \nBackground: Aron Visuals - https://unsplash.com/@aronvisuals"
+    },
+    "Questions": [
+        {
+            "QuestionText": "Which decade did Catherine the Great die in?",
+            "AnswerA": "1770 - 1779",
+            "AnswerB": "1780 - 1789",
+            "AnswerC": "1790 - 1799",
+            "AnswerD": "1800 - 1089",
+            "CorrectAnswer": "C",
+            "AnswerFact": "Catherine the Great died on the 17th of November 1796, aged 67. An autopsy confirmed a stroke as the cause of death.",
+            "QuestionImage": "History/Images/catherine.jpg",
+            "Tags": ["History", "Russia"],
+            "Sources" : ["Wikipedia", ""]
+        }
+    ]
+}

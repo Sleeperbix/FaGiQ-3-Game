@@ -8,6 +8,7 @@ public partial class ManagerQuestionRoom : Control
 	[Export] private Control topBarGUI;
 
 	// Text labels, question text, answers etc.
+	private C_QuestionMultipleChoice question;
 	private RichTextLabel guiCategoryText;
 	private RichTextLabel guiQuestionText;
 	private RichTextLabel guiAnswerA;
@@ -19,8 +20,13 @@ public partial class ManagerQuestionRoom : Control
 	private TextureRect guiQuestionImage;
 	private TextureRect guiQuestionBG;
 
-	private C_QuestionMultipleChoice question;
+	// Timer stuff
 
+	[Export] public Timer questionTimer;
+	[Export] public RichTextLabel timerText;
+	[Export] public Button timerButton;
+	[Export] public int timeLimit = 15;
+	private int timeLeft;
 
 	public override void _Ready()
 	{
@@ -49,31 +55,82 @@ public partial class ManagerQuestionRoom : Control
 		guiFact.Text = question.AnswerFact;
 		guiFactBG.Visible = false;
 
+		
 		string imagePath_QuestionImage = "res://Assets/" + question.QuestionImage;
 		Texture2D imageTexture_QuestionImage = GD.Load<Texture2D>(imagePath_QuestionImage);
+		if (imageTexture_QuestionImage == null) { imageTexture_QuestionImage = GD.Load<Texture2D>("res://Assets/00Default/questionimage.png"); }
 		guiQuestionImage.Texture = imageTexture_QuestionImage;
-
+		
 		string imagePath_BGImage = "res://Assets/" + question.BGImage;
 		Texture2D imageTexture_BGImage = GD.Load<Texture2D>(imagePath_BGImage);
+		if (imageTexture_BGImage == null) { imageTexture_BGImage = GD.Load<Texture2D>("res://Assets/00Default/questionbackground.jpg"); }
 		guiQuestionBG.Texture = imageTexture_BGImage;
 
 		string musicPath = "res://Assets/" + question.BGMusic;
-		ManagerAudio.Instance.PlayMusicLoop(musicPath);
+		if (!string.IsNullOrWhiteSpace(question.BGMusic) && FileAccess.FileExists(musicPath)) {ManagerAudio.Instance.PlayMusicLoop(musicPath);}
+		else {ManagerAudio.Instance.PlayMusicLoop("res://Assets/00Default/questionmusic.mp3");}
 
-		// if (question != null)
-		// {
-		// 	GD.Print("Loaded question category: " + question.CategoryTitle);
-		// }
-		// else
-		// {
-		// 	GD.Print("SelectedQuestion is null!");
-		// }
+		// Assign button and timer stuff
 
-		// if (questionGUI != null)
-		// {
-		// 	GD.Print("Found Question GUI");
-		// }
+			questionTimer.Timeout += TimerTick;
+		timerButton.Pressed += TimerStarted;
+		TimerReset();
+
 	}
+
+	private void TimerStarted()
+	{
+		TimerReset();
+		questionTimer.Start();		
+	}
+
+	private void TimerTick()
+	{
+		timeLeft--;
+		timerText.Text = timeLeft.ToString();
+
+		if (timeLeft <= 0)
+		{
+			questionTimer.Stop();
+			ManagerAudio.Instance.PlaySFX("res://Audio/SystemSFX/Timer.wav");
+			FlashTimer();
+		}
+	}
+
+	private void FlashTimer()
+	{
+		Tween tween = CreateTween();
+		timerText.Modulate = new Color(timerText.Modulate, 1f);
+
+		float flashDuration = 0.1f;
+		int flashCount = 3;
+
+		for (int i = 0; i < flashCount; i++)
+		{
+			float delay = i * flashDuration * 2;
+
+			tween.TweenProperty(timerText, "modulate:a", 0.3f, flashDuration)
+				.SetDelay(delay)
+				.SetTrans(Tween.TransitionType.Sine)
+				.SetEase(Tween.EaseType.InOut);
+			
+			tween.TweenProperty(timerText, "modulate:a", 1.0f, flashDuration)
+				.SetDelay(delay + flashDuration)
+				.SetTrans(Tween.TransitionType.Sine)
+				.SetEase(Tween.EaseType.InOut);
+		}
+	}
+
+	private void TimerReset()
+	{
+		timeLeft = timeLimit;
+		timerText.Text = timeLeft.ToString();
+		questionTimer.WaitTime = 1.0f;
+		questionTimer.OneShot = false;
+		questionTimer.Stop();
+	}
+
+
 
 	public void RevealAnswer()
 	{

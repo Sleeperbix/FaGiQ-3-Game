@@ -6,7 +6,7 @@ public partial class ManagerMultipleChoice : Node
 {
 	[Export] public string MasterListFilePath = "res://Assets/Questions.txt";
 	private List<C_QuestionMultipleChoice> allQuestionsMaster = new List<C_QuestionMultipleChoice>();
-	private List<C_QuestionMultipleChoice> allQuestionsPool;
+	static private List<C_QuestionMultipleChoice> allQuestionsPool = new List<C_QuestionMultipleChoice>();
 
 	[Export] public Node QuestionButtonBarNode;
 	List<Button> buttons = new List<Button>();
@@ -19,7 +19,11 @@ public partial class ManagerMultipleChoice : Node
 		InitializeButtons();
 		ReadMasterFile();
 		// If allQuestionsPool is less than 7, run CreateQuestionPool. Otherwise, ignore.
-		CreateQuestionPool();
+		if (allQuestionsPool.Count <= 8)
+		{
+			CreateQuestionPool();
+		}
+		GD.Print($"Questions in pool: {allQuestionsPool.Count}");
 		SetQuestionsToButtons();
 		ManagerAudio.Instance.PlayMusicLoop("res://Audio/SystemBG/Setup and Kart Select - Mario Kart 64.mp3");
 	}
@@ -119,7 +123,7 @@ public partial class ManagerMultipleChoice : Node
 				BGMusic = global["BGMusic"].ToString()
 			};
 
-			GD.Print($"Loaded question: {q.QuestionText}");
+			//GD.Print($"Loaded question: {q.QuestionText}");
 			allQuestionsMaster.Add(q);
 		}
 	}
@@ -154,7 +158,6 @@ public partial class ManagerMultipleChoice : Node
 		int index = pickedQuestions[i];
 			var question = allQuestionsPool[index];
 			var button = buttons[i];
-			GD.Print($"Current Button: {buttons[i]}");
 
 			var label = button.GetNode<RichTextLabel>("RichTextLabel");
 			//label.Text = question.CategoryTitle;
@@ -171,8 +174,6 @@ public partial class ManagerMultipleChoice : Node
 	}
 	private void OnQuestionButtonPressed(C_QuestionMultipleChoice question)
 	{
-		GD.Print($"Button pressed for question: {question.QuestionText}");
-
 		// Lock all buttons to prevent multiple clicks
 		foreach (var btn in buttons)
 			btn.Disabled = true;
@@ -187,9 +188,6 @@ public partial class ManagerMultipleChoice : Node
 		ManagerAudio.Instance.PlaySFX("res://Audio/SystemSFX/Button.wav");
 		ManagerAudio.Instance.PlaySFX("res://Assets/" + question.SelectionSound);
 		ManagerGame.Instance.TransitionToScene("res://Scenes/QuestionScene-MC.tscn");
-
-		// For now just log
-		GD.Print("Selected question stored. Ready to transition.");
 	}
 
 }

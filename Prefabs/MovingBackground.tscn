@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://ntsoaoxgdgyd"]
+
+[ext_resource type="Script" uid="uid://bv2oclps3mrhw" path="res://Scripts/BackgroundWander.cs" id="1_njv7x"]
+[ext_resource type="Texture2D" uid="uid://cs8al2g4vayoj" path="res://Assets/00CategoryAssets/MultipleChoice/bg-multiplechoice01.jpg" id="2_wxa58"]
+
+[node name="MovingBackground" type="Control" node_paths=PackedStringArray("backgroundImage")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_njv7x")
+backgroundImage = NodePath("BGImage")
+
+[node name="BGImage" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_wxa58")
+expand_mode = 1
