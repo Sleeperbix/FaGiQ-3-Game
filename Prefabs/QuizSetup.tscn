@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://ck5euc4wvsbiq"]
+[gd_scene load_steps=4 format=3 uid="uid://ck5euc4wvsbiq"]
 
 [ext_resource type="Script" uid="uid://co0lo02vnu10n" path="res://addons/font_auto_size_labels/auto_size_rich_text_label.gd" id="1_exyuj"]
 [ext_resource type="Script" uid="uid://b16im2olkd8vq" path="res://Scripts/CategoryImporter.cs" id="1_nvolv"]
+[ext_resource type="PackedScene" uid="uid://d2d35sub2p3wp" path="res://Prefabs/TopBar.tscn" id="2_tp51s"]
 
-[node name="QuizSetup" type="Control" node_paths=PackedStringArray("statusLabel", "searchButton", "resultsBox", "infoLabel")]
+[node name="QuizSetup" type="Control" node_paths=PackedStringArray("searchButton", "tickAllButton", "untickAllButton", "resultsBox", "infoLabel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,38 +12,58 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nvolv")
-statusLabel = NodePath("MarginContainer/VBoxContainer/AutoSizeRichTextlabel")
-searchButton = NodePath("MarginContainer/VBoxContainer/Button")
-resultsBox = NodePath("MarginContainer/VBoxContainer/FoundContainer")
-infoLabel = NodePath("Label")
+searchButton = NodePath("MarginContainer/VBoxContainer/AutoSearchButton")
+tickAllButton = NodePath("MarginContainer/VBoxContainer/TickButton")
+untickAllButton = NodePath("MarginContainer/VBoxContainer/UntickButton")
+resultsBox = NodePath("MarginContainer/VBoxContainer/ScrollContainer/FoundContainer")
+infoLabel = NodePath("MarginContainer/VBoxContainer/ScrollContainer2/Label")
+
+[node name="TopBar" parent="." instance=ExtResource("2_tp51s")]
+layout_mode = 1
+offset_bottom = -800.0
+
+[node name="TopBarText" parent="TopBar/TopBarBG" index="0"]
+text = "Category Setup"
+
+[node name="ButtonLeft2" parent="TopBar" index="2"]
+visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_right = 273.0
-offset_bottom = 604.0
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 1.0
+offset_top = 100.0
+offset_right = 400.0
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0.458405, 0.458405, 0.458405, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+[node name="AutoSizeRichTextlabel2" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 40
-text = "text"
+size_flags_stretch_ratio = 0.5
+theme_override_font_sizes/normal_font_size = 45
+text = "Import Categories"
 scroll_active = false
 horizontal_alignment = 1
+vertical_alignment = 1
 script = ExtResource("1_exyuj")
-_max_size = 40
-_min_size = 10
-_current_font_size = 40
+_max_size = 50
+_current_font_size = 45
 _editor_defaults_set = true
 metadata/_custom_type_script = "uid://co0lo02vnu10n"
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="ManualSearchButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
 
-[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Button"]
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/ManualSearchButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -50,27 +71,145 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 50
-text = "Search for Categories"
+theme_override_font_sizes/normal_font_size = 45
+text = "Manual Search"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("1_exyuj")
 _max_size = 50
 _min_size = 10
-_current_font_size = 50
+_current_font_size = 45
 _editor_defaults_set = true
 metadata/_custom_type_script = "uid://co0lo02vnu10n"
 
-[node name="FoundContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="AutoSearchButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/AutoSearchButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 45
+text = "Auto Search"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_exyuj")
+_max_size = 50
+_min_size = 10
+_current_font_size = 45
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer2"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "text"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="FoundContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 6
 
-[node name="Label" type="Label" parent="."]
+[node name="TickButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/TickButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 45
+text = "Tick All"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_exyuj")
+_max_size = 50
+_min_size = 10
+_current_font_size = 45
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
+
+[node name="UntickButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/UntickButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 45
+text = "Untick All"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_exyuj")
+_max_size = 50
+_min_size = 10
+_current_font_size = 45
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
+
+[node name="ideas label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 401.0
-offset_top = 68.0
-offset_right = 854.0
-offset_bottom = 294.0
-text = "text"
+offset_left = 450.0
+offset_top = 165.0
+offset_right = 1131.0
+offset_bottom = 541.0
+text = "ideas
+
+Scale Categories
+Auto Scale (scale questions per category to the smallest category)
+Manual scale (set how many questions you want from the category to appear in the quiz
+Do not scale (put all questions from the category into the quiz)
+
+Set filepath (set location for Questions.txt to exist, and where to keep category assets)
+
+Enable category colours (Enable custom colours for categories)"
+
+[node name="loaded categories" type="Label" parent="."]
+layout_mode = 0
+offset_left = 818.0
+offset_top = 456.0
+offset_right = 1419.0
+offset_bottom = 783.0
+text = "third column
+
+Display which categories are going to be loaded into this instance of the quiz.
+
+E.g.
+
+Dogs - 5 Questions
+History - 5 Questions"
+
+[editable path="TopBar"]
