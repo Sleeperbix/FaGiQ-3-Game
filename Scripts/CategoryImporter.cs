@@ -12,6 +12,7 @@ public partial class CategoryImporter : Control
     [Export] private Button untickAllButton;
     [Export] private VBoxContainer resultsBox;
     [Export] private Label infoLabel;
+    [Export] private Button setCategoriesButton;
     private string filePath = ProjectSettings.GlobalizePath("res://Assets/Questions.txt");
 
     public override void _Ready()
@@ -27,9 +28,13 @@ public partial class CategoryImporter : Control
         untickAllButton.Pressed += OnUntickAllPressed;
         untickAllButton.MouseEntered += () => OnButtonHovered("Disable all categories in list.");
         untickAllButton.MouseExited += () => OnButtonHovered("...");
-        
-        List<string> categoriesFromFile = ReadCategoriesFromTxt();        
+
+        List<string> categoriesFromFile = ReadCategoriesFromTxt();
         DisplayCategories(categoriesFromFile);
+
+        setCategoriesButton.Pressed += OnSetCategoriesPressed;
+        setCategoriesButton.MouseEntered += () => OnButtonHovered("Confirm categories for the quiz.");        
+        setCategoriesButton.MouseExited += () => OnButtonHovered("...");
     }
 
 
@@ -148,12 +153,42 @@ public partial class CategoryImporter : Control
 
             CheckBox chk = new CheckBox();
             chk.Text = info.Title;
+            chk.SetMeta("Path", jsonPath);
             chk.MouseEntered += () => OnCategoryHovered(info.Title, info.Author, info.QuestionsCount, info.Summary);
 
             resultsBox.AddChild(chk);
-            GD.Print(chk.Text);
-            GD.Print(chk.GlobalPosition);
         }
+    }
+
+    public List<string> SetActiveMultipleChoiceCategories()
+    {
+        var selected = new List<string>();
+
+        foreach (Node child in resultsBox.GetChildren())
+        {
+            if (child is CheckBox chk && chk.ButtonPressed)
+            {
+                string path = chk.GetMeta("Path").AsString();
+                selected.Add(path);
+            }
+        }
+
+        return selected;
+    }
+
+    private void OnSetCategoriesPressed()
+    {
+        List<string> selectedCategories = SetActiveMultipleChoiceCategories();
+
+        if (selectedCategories.Count == 0)
+        {
+            GD.Print("No categories selected!");
+            infoLabel.Text = "No categories selected!";
+            return;
+        }
+        ManagerGame.Instance.SetMultipleChoiceCategories(selectedCategories);
+        GD.Print($"Sent {selectedCategories.Count} categories to ManagerGame.");
+        infoLabel.Text = $"{selectedCategories.Count} categories set for quiz.";
     }
 
     private void OnCategoryHovered(string title, string author, int questionsCount, string summary)

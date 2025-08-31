@@ -48,7 +48,45 @@
             "QuestionImage": "History/Images/ancientEgypt.jpg",
             "Tags": ["History", "Egypt"],
             "Sources" : ["Wikipedia", "BBC Bitesize"]
-        }
-
+        },
+        {
+            "ID": "004",
+            "QuestionText": "Who was the Prussian statesman known as the 'Iron Chancellor', credited with leading the unification of Germany in 1871?",
+            "AnswerA": "Friedrich Ebert",
+            "AnswerB": "Luise Auguste Wilhelmine Amalie",
+            "AnswerC": "Otto von Bismarck",
+            "AnswerD": "Wilhelm I",
+            "CorrectAnswer": "C",
+            "AnswerFact": "Otto von Bismarck, known as the 'Iron Chancellor', was the Prussian statesman who masterminded the unification of Germany in 1871 under Prussian leadership. He became the first Chancellor of the German Empire, serving from 1871 to 1890.",
+            "QuestionImage": "History/Images/germany.jpg",
+            "Tags": ["History", "Germany"],
+            "Sources": ["Encyclopedia Britannica", "Wikipedia"]
+        },
+        {
+            "ID": "005",
+            "QuestionText": "Which of these historical events happened first?",
+            "AnswerA": "The Battle of Waterloo",
+            "AnswerB": "The French Revolution begins",
+            "AnswerC": "Napoleon crowns himself Emperor of the French",
+            "AnswerD": "The U.S. Declaration of Independence is signed",
+            "CorrectAnswer": "D",
+            "AnswerFact": "The U.S. Declaration of Independence was signed in 1776. The French Revolution began in 1789, Napoleon crowned himself Emperor in 1804, and the Battle of Waterloo took place in 1815.",
+            "QuestionImage": "History/Images/events.jpg",
+            "Tags": ["History"],
+            "Sources": ["Encyclopedia Britannica", "Wikipedia"]
+        },
+        {
+            "ID": "006",
+            "QuestionText": "Which year did the United States enter World War 1?",
+            "AnswerA": "1916",
+            "AnswerB": "1917",
+            "AnswerC": "1918",
+            "AnswerD": "1919",
+            "CorrectAnswer": "B",
+            "AnswerFact": "The United States entered World War 1 on 6 April 1917, more than two and a half years after the war began in Europe.",
+            "QuestionImage": "History/Images/congress.jpg",
+            "Tags": ["History", "World War 1"],
+            "Sources": ["Wikipedia"]
+        }        
     ]
 }

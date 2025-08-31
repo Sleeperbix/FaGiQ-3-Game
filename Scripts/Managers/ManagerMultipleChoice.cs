@@ -17,7 +17,8 @@ public partial class ManagerMultipleChoice : Node
 	public override void _Ready()
 	{
 		InitializeButtons();
-		ReadMasterFile();
+		ReadMultipleChoiceCategories();
+		// ReadMasterFile();
 		// If allQuestionsPool is less than 7, run CreateQuestionPool. Otherwise, ignore.
 		if (allQuestionsPool.Count <= 8)
 		{
@@ -67,6 +68,19 @@ public partial class ManagerMultipleChoice : Node
 				LoadQuestionsFromJson(jsonPath);
 			}
 		}
+	}
+
+	private void ReadMultipleChoiceCategories()
+	{
+		foreach (string category in ManagerGame.activeMultipleChoiceCategories)
+		{
+			if (!string.IsNullOrEmpty(category))
+			{
+				string jsonPath = $"res://Assets/{category}";
+				LoadQuestionsFromJson(jsonPath);
+			}
+		}
+
 	}
 	private void LoadQuestionsFromJson(string jsonPath)
 	{

@@ -1,32 +1,50 @@
-[gd_scene load_steps=4 format=3 uid="uid://ck5euc4wvsbiq"]
+[gd_scene load_steps=8 format=3 uid="uid://ck5euc4wvsbiq"]
 
-[ext_resource type="Script" uid="uid://co0lo02vnu10n" path="res://addons/font_auto_size_labels/auto_size_rich_text_label.gd" id="1_exyuj"]
-[ext_resource type="Script" uid="uid://b16im2olkd8vq" path="res://Scripts/CategoryImporter.cs" id="1_nvolv"]
-[ext_resource type="PackedScene" uid="uid://d2d35sub2p3wp" path="res://Prefabs/TopBar.tscn" id="2_tp51s"]
+[ext_resource type="Script" uid="uid://b16im2olkd8vq" path="res://Scripts/CategoryImporter.cs" id="1_hpdsj"]
+[ext_resource type="PackedScene" uid="uid://wj0jg37461ob" path="res://Prefabs/Managers/ManagerGame.tscn" id="2_2tjd6"]
+[ext_resource type="PackedScene" uid="uid://dwldkksxvb7b0" path="res://Prefabs/Managers/ManagerAudio.tscn" id="3_fb7l2"]
+[ext_resource type="PackedScene" uid="uid://d2d35sub2p3wp" path="res://Prefabs/TopBar.tscn" id="4_l5axi"]
+[ext_resource type="Script" uid="uid://qoi5bhwei3jl" path="res://Scripts/SceneButton.cs" id="5_e7tr3"]
+[ext_resource type="Script" uid="uid://co0lo02vnu10n" path="res://addons/font_auto_size_labels/auto_size_rich_text_label.gd" id="6_wi5o5"]
+[ext_resource type="PackedScene" uid="uid://dr024j8qw11ud" path="res://Prefabs/SceneFader.tscn" id="7_p25d4"]
 
-[node name="QuizSetup" type="Control" node_paths=PackedStringArray("searchButton", "tickAllButton", "untickAllButton", "resultsBox", "infoLabel")]
+[node name="QuizSetup" type="Control" node_paths=PackedStringArray("searchButton", "tickAllButton", "untickAllButton", "resultsBox", "infoLabel", "setCategoriesButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_nvolv")
+script = ExtResource("1_hpdsj")
 searchButton = NodePath("MarginContainer/VBoxContainer/AutoSearchButton")
 tickAllButton = NodePath("MarginContainer/VBoxContainer/TickButton")
 untickAllButton = NodePath("MarginContainer/VBoxContainer/UntickButton")
 resultsBox = NodePath("MarginContainer/VBoxContainer/ScrollContainer/FoundContainer")
 infoLabel = NodePath("MarginContainer/VBoxContainer/ScrollContainer2/Label")
+setCategoriesButton = NodePath("MarginContainer/VBoxContainer/CategorySetButton")
 
-[node name="TopBar" parent="." instance=ExtResource("2_tp51s")]
+[node name="ManagerGame" parent="." instance=ExtResource("2_2tjd6")]
+
+[node name="ManagerAudio" parent="." instance=ExtResource("3_fb7l2")]
+
+[node name="TopBar" parent="." instance=ExtResource("4_l5axi")]
 layout_mode = 1
 offset_bottom = -800.0
 
 [node name="TopBarText" parent="TopBar/TopBarBG" index="0"]
 text = "Category Setup"
 
+[node name="ButtonLeft" parent="TopBar" index="1"]
+ManagerPath = NodePath("../../ManagerGame")
+
 [node name="ButtonLeft2" parent="TopBar" index="2"]
-visible = false
+script = ExtResource("5_e7tr3")
+ManagerPath = NodePath("../../ManagerGame")
+targetScene = "res://Scenes/RoundSelectionScene.tscn"
+
+[node name="AutoSizeRichTextlabel" parent="TopBar/ButtonLeft2" index="0"]
+text = "Start
+Quiz"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -52,33 +70,8 @@ text = "Import Categories"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("1_exyuj")
+script = ExtResource("6_wi5o5")
 _max_size = 50
-_current_font_size = 45
-_editor_defaults_set = true
-metadata/_custom_type_script = "uid://co0lo02vnu10n"
-
-[node name="ManualSearchButton" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.3
-
-[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/ManualSearchButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 45
-text = "Manual Search"
-scroll_active = false
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("1_exyuj")
-_max_size = 50
-_min_size = 10
 _current_font_size = 45
 _editor_defaults_set = true
 metadata/_custom_type_script = "uid://co0lo02vnu10n"
@@ -101,7 +94,7 @@ text = "Auto Search"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("1_exyuj")
+script = ExtResource("6_wi5o5")
 _max_size = 50
 _min_size = 10
 _current_font_size = 45
@@ -117,7 +110,7 @@ custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "text"
+text = "..."
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -148,7 +141,7 @@ text = "Tick All"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("1_exyuj")
+script = ExtResource("6_wi5o5")
 _max_size = 50
 _min_size = 10
 _current_font_size = 45
@@ -173,7 +166,32 @@ text = "Untick All"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("1_exyuj")
+script = ExtResource("6_wi5o5")
+_max_size = 50
+_min_size = 10
+_current_font_size = 45
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
+
+[node name="CategorySetButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/CategorySetButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 45
+text = "Set Categories"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_wi5o5")
 _max_size = 50
 _min_size = 10
 _current_font_size = 45
@@ -211,5 +229,8 @@ E.g.
 
 Dogs - 5 Questions
 History - 5 Questions"
+
+[node name="SceneFader" parent="." instance=ExtResource("7_p25d4")]
+visible = false
 
 [editable path="TopBar"]
