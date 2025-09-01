@@ -17,7 +17,8 @@ public partial class ManagerMultipleChoice : Node
 	public override void _Ready()
 	{
 		InitializeButtons();
-		ReadMasterFile();
+		ReadMultipleChoiceCategories();
+		// ReadMasterFile();
 		// If allQuestionsPool is less than 7, run CreateQuestionPool. Otherwise, ignore.
 		if (allQuestionsPool.Count <= 8)
 		{
@@ -42,8 +43,15 @@ public partial class ManagerMultipleChoice : Node
 		}
 		foreach (var child in container.GetChildren())
 		{
-			if (child is Button btn) buttons.Add(btn);
+			if (child is Control ctrl)
+			{
+				foreach (var child2 in ctrl.GetChildren())
+				{
+					if (child2 is Button btn) buttons.Add(btn);
+				}
+			}
 		}
+		
 
 	}
 
@@ -67,6 +75,19 @@ public partial class ManagerMultipleChoice : Node
 				LoadQuestionsFromJson(jsonPath);
 			}
 		}
+	}
+
+	private void ReadMultipleChoiceCategories()
+	{
+		foreach (string category in ManagerGame.activeMultipleChoiceCategories)
+		{
+			if (!string.IsNullOrEmpty(category))
+			{
+				string jsonPath = $"res://Assets/{category}";
+				LoadQuestionsFromJson(jsonPath);
+			}
+		}
+
 	}
 	private void LoadQuestionsFromJson(string jsonPath)
 	{
@@ -167,26 +188,39 @@ public partial class ManagerMultipleChoice : Node
 			var stylebox = new StyleBoxFlat();
 			stylebox.BgColor = question.ButtonBGColour;
 			button.AddThemeStyleboxOverride("normal", stylebox);
+			button.AddThemeStyleboxOverride("hover", stylebox);
 
 			C_QuestionMultipleChoice capturedQuestion = question;
-			button.Pressed += () => OnQuestionButtonPressed(capturedQuestion);
+			button.Pressed += () => OnQuestionButtonPressed(capturedQuestion, button);
 		}
 	}
-	private void OnQuestionButtonPressed(C_QuestionMultipleChoice question)
+	private async void OnQuestionButtonPressed(C_QuestionMultipleChoice question, Button pressedButton)
 	{
-		// Lock all buttons to prevent multiple clicks
-		foreach (var btn in buttons)
-			btn.Disabled = true;
-
 		// Store the selected question
 		selectedQuestion = question;
-
 		// Remove from pool so it’s not reused
 		allQuestionsPool.Remove(question);
-
+		
+		// Lock all buttons to prevent multiple clicks
+		foreach (var btn in buttons)
+		{
+			var label = btn.GetNode<RichTextLabel>("RichTextLabel");
+			if (btn == pressedButton)
+			{
+				var stylebox = new StyleBoxFlat();
+				stylebox.BgColor = question.ButtonBGColour;
+				btn.AddThemeStyleboxOverride("disabled", stylebox);
+			}
+			else
+			{
+				label.Text = $"[color=black]";				
+			}
+			btn.Disabled = true;
+		}
 		ManagerGame.Instance.SetSelectedQuestion(question);
 		ManagerAudio.Instance.PlaySFX("res://Audio/SystemSFX/Button.wav");
 		ManagerAudio.Instance.PlaySFX("res://Assets/" + question.SelectionSound);
+		await ToSignal(GetTree().CreateTimer(0.5f), "timeout");
 		ManagerGame.Instance.TransitionToScene("res://Scenes/QuestionScene-MC.tscn");
 	}
 

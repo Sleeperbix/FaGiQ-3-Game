@@ -1,7 +1,7 @@
-Dogs/dogs.json
 Birds/birds.json
-Science/science.json
+Dogs/dogs.json
 Fish/fish.json
-Literature/literature.json
-History/history.json
 Geography/geography.json
+History/history.json
+Literature/literature.json
+Science/science.json
