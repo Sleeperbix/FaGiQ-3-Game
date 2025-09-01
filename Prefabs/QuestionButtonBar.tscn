@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dr0a3642i4krl"]
+[gd_scene load_steps=4 format=3 uid="uid://dr0a3642i4krl"]
 
 [ext_resource type="Script" uid="uid://co0lo02vnu10n" path="res://addons/font_auto_size_labels/auto_size_rich_text_label.gd" id="1_ftl43"]
+[ext_resource type="Script" uid="uid://dvp66retptjjd" path="res://Scripts/ButtonAnimation.cs" id="1_xq78v"]
 
 [sub_resource type="Theme" id="Theme_jdq4n"]
 
@@ -35,12 +36,20 @@ offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Button1" type="Button" parent="HBoxContainer"]
+[node name="Control1" type="Control" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = SubResource("Theme_jdq4n")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Button1"]
+[node name="Button1" type="Button" parent="HBoxContainer/Control1"]
+layout_mode = 2
+offset_left = 4.0
+offset_right = 180.0
+offset_bottom = 150.0
+size_flags_horizontal = 3
+theme = SubResource("Theme_jdq4n")
+script = ExtResource("1_xq78v")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Control1/Button1"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.05
@@ -50,7 +59,7 @@ anchor_bottom = 0.95
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 37
+theme_override_font_sizes/normal_font_size = 36
 bbcode_enabled = true
 text = "Goodbye"
 scroll_active = false
@@ -59,16 +68,24 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("1_ftl43")
 _max_size = 40
-_current_font_size = 37
+_current_font_size = 36
 _editor_defaults_set = true
 metadata/_custom_type_script = "uid://co0lo02vnu10n"
 
-[node name="Button2" type="Button" parent="HBoxContainer"]
+[node name="Control2" type="Control" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = SubResource("Theme_jdq4n")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Button2"]
+[node name="Button2" type="Button" parent="HBoxContainer/Control2"]
+layout_mode = 2
+offset_left = 4.0
+offset_right = 180.0
+offset_bottom = 150.0
+size_flags_horizontal = 3
+theme = SubResource("Theme_jdq4n")
+script = ExtResource("1_xq78v")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Control2/Button2"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.05
@@ -91,12 +108,20 @@ _current_font_size = 39
 _editor_defaults_set = true
 metadata/_custom_type_script = "uid://co0lo02vnu10n"
 
-[node name="Button3" type="Button" parent="HBoxContainer"]
+[node name="Control3" type="Control" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = SubResource("Theme_jdq4n")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Button3"]
+[node name="Button3" type="Button" parent="HBoxContainer/Control3"]
+layout_mode = 2
+offset_left = 4.0
+offset_right = 180.0
+offset_bottom = 150.0
+size_flags_horizontal = 3
+theme = SubResource("Theme_jdq4n")
+script = ExtResource("1_xq78v")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Control3/Button3"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.05
@@ -119,12 +144,20 @@ _current_font_size = 40
 _editor_defaults_set = true
 metadata/_custom_type_script = "uid://co0lo02vnu10n"
 
-[node name="Button4" type="Button" parent="HBoxContainer"]
+[node name="Control4" type="Control" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = SubResource("Theme_jdq4n")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Button4"]
+[node name="Button4" type="Button" parent="HBoxContainer/Control4"]
+layout_mode = 2
+offset_left = 4.0
+offset_right = 180.0
+offset_bottom = 150.0
+size_flags_horizontal = 3
+theme = SubResource("Theme_jdq4n")
+script = ExtResource("1_xq78v")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Control4/Button4"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.05
@@ -147,12 +180,20 @@ _current_font_size = 40
 _editor_defaults_set = true
 metadata/_custom_type_script = "uid://co0lo02vnu10n"
 
-[node name="Button5" type="Button" parent="HBoxContainer"]
+[node name="Control5" type="Control" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = SubResource("Theme_jdq4n")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Button5"]
+[node name="Button5" type="Button" parent="HBoxContainer/Control5"]
+layout_mode = 2
+offset_left = 4.0
+offset_right = 180.0
+offset_bottom = 150.0
+size_flags_horizontal = 3
+theme = SubResource("Theme_jdq4n")
+script = ExtResource("1_xq78v")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Control5/Button5"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.05
@@ -175,12 +216,20 @@ _current_font_size = 40
 _editor_defaults_set = true
 metadata/_custom_type_script = "uid://co0lo02vnu10n"
 
-[node name="Button6" type="Button" parent="HBoxContainer"]
+[node name="Control6" type="Control" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = SubResource("Theme_jdq4n")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Button6"]
+[node name="Button6" type="Button" parent="HBoxContainer/Control6"]
+layout_mode = 2
+offset_left = 4.0
+offset_right = 180.0
+offset_bottom = 150.0
+size_flags_horizontal = 3
+theme = SubResource("Theme_jdq4n")
+script = ExtResource("1_xq78v")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Control6/Button6"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.05
@@ -203,12 +252,20 @@ _current_font_size = 40
 _editor_defaults_set = true
 metadata/_custom_type_script = "uid://co0lo02vnu10n"
 
-[node name="Button7" type="Button" parent="HBoxContainer"]
+[node name="Control7" type="Control" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = SubResource("Theme_jdq4n")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Button7"]
+[node name="Button7" type="Button" parent="HBoxContainer/Control7"]
+layout_mode = 2
+offset_left = 4.0
+offset_right = 180.0
+offset_bottom = 150.0
+size_flags_horizontal = 3
+theme = SubResource("Theme_jdq4n")
+script = ExtResource("1_xq78v")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Control7/Button7"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.05
@@ -231,12 +288,20 @@ _current_font_size = 40
 _editor_defaults_set = true
 metadata/_custom_type_script = "uid://co0lo02vnu10n"
 
-[node name="Button8" type="Button" parent="HBoxContainer"]
+[node name="Control8" type="Control" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = SubResource("Theme_jdq4n")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Button8"]
+[node name="Button8" type="Button" parent="HBoxContainer/Control8"]
+layout_mode = 2
+offset_left = 4.0
+offset_right = 180.0
+offset_bottom = 150.0
+size_flags_horizontal = 3
+theme = SubResource("Theme_jdq4n")
+script = ExtResource("1_xq78v")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Control8/Button8"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.05
