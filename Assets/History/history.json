@@ -46,7 +46,7 @@
             "CorrectAnswer": "A",
             "AnswerFact": "The last pharaoh of Ancient Egypt was Cleopatra VII, whose reign ended in 30BC after her defeat by by Octavian (the future Emperor Augustus). Following her death, Egypt became a province of the Roman Empire.",
             "QuestionImage": "History/Images/ancientEgypt.jpg",
-            "Tags": ["History", "Egypt"],
+            "Tags": ["History", "Ancient Egypt"],
             "Sources" : ["Wikipedia", "BBC Bitesize"]
         },
         {
@@ -87,6 +87,84 @@
             "QuestionImage": "History/Images/congress.jpg",
             "Tags": ["History", "World War 1"],
             "Sources": ["Wikipedia"]
-        }        
+        },
+        {
+            "ID": "007",
+            "QuestionText": "Which volcano caused the destruction of Pompeii?",
+            "AnswerA": "Etna",
+            "AnswerB": "Krakatoa",
+            "AnswerC": "Pelée",
+            "AnswerD": "Vesuvius",
+            "CorrectAnswer": "D",
+            "AnswerFact": "Pompeii was destroyed by the violent eruption of Mount Vesuvius in 79AD, which buried the city under volcanic ash and pumice over the course of nearly two days.",
+            "QuestionImage": "History/Images/pompeii.jpg",
+            "Tags": ["History", "Volcanoes"],
+            "Sources": ["Wikipedia"]
+        },
+        {
+            "ID": "008",
+            "QuestionText": "Which of the following is NOT one of the Seven Wonders of the Ancient World?",
+            "AnswerA": "The Great Wall of China",
+            "AnswerB": "The Hanging Gardens of Babylon",
+            "AnswerC": "The Lighthouse of Alexandria",
+            "AnswerD": "The Temple of Artemis",
+            "CorrectAnswer": "A",
+            "AnswerFact": "The Seven Wonders of the Ancient World are the Great Pyramid of Giza, the Hanging Gardens of Babylon, the Temple of Artemis, the Statue of Zeus, the Mausoleum at Halicarnassus, the Colossus, and the Lighthouse of Alexandria.",
+            "QuestionImage": "History/Images/wonders.jpg",
+            "Tags": ["History", "Landmarks"],
+            "Sources": ["Wikipedia"]
+        },
+        {
+            "ID": "009",
+            "QuestionText": "How many people in Europe are estimated to have died from the Black Death (Bubonic Plague) in the 14th century?",
+            "AnswerA": "Around 10 million",
+            "AnswerB": "Around 15 million",
+            "AnswerC": "Around 20 million",
+            "AnswerD": "Around 25 million",
+            "CorrectAnswer": "D",
+            "AnswerFact": "The Black Death is estimated to have killed about 25 million people in Europe between 1347 and 1351, roughly one-third of the population at the time. Worldwide estimates range much higher, sometimes reaching 75 million or more.",
+            "QuestionImage": "History/Images/plaguedoctor.jpg",
+            "Tags": ["History", "Diseases", "Black Death"],
+            "Sources": ["Wikipedia", "Encyclopedia Britannica"]
+        },
+        {
+            "ID": "010",
+            "QuestionText": "Which of the following is NOT a script inscribed on the Rosetta Stone?",
+            "AnswerA": "Ancient Greek",
+            "AnswerB": "Coptic",
+            "AnswerC": "Demotic",
+            "AnswerD": "Hieroglyphic",
+            "CorrectAnswer": "B",
+            "AnswerFact": "The Rosetta Stone is an ancient granodiorite stela discovered in 1799 by French soldiers in Egypt, now housed in the British Museum. It contains a decree from 196BC issued during the reign of Pharaoh Ptolemy V, inscribed in three scripts: Hieroglyphic, Demotic and Ancient Greek",
+            "QuestionImage": "History/Images/rosettaStone.jpg",
+            "Tags": ["History", "Ancient Egypt", "Language"],
+            "Sources": ["Wikipedia", "British Museum"]
+        },
+        {
+            "ID": "011",
+            "QuestionText": "Who was the first President of the United States?",
+            "AnswerA": "Benjamin Franklin",
+            "AnswerB": "George Washington",
+            "AnswerC": "John Adams",
+            "AnswerD": "Thomas Jefferson",
+            "CorrectAnswer": "B",
+            "AnswerFact": "George Washington became the first President of the United States in 1789 and served two terms until 1797. He set many precedents for the office, including the tradition of stepping down after two terms.",
+            "QuestionImage": "History/Images/whitehouse.jpg",
+            "Tags": ["History", "United States"],
+            "Sources": ["Wikipedia"]
+        },
+        {
+            "ID": "012",
+            "QuestionText": "What was the real name of Genghis Khan?",
+            "AnswerA": "Batu",
+            "AnswerB": "Kublai",
+            "AnswerC": "Ögedei",
+            "AnswerD": "Temüjin",
+            "CorrectAnswer": "D",
+            "AnswerFact": "Genghis Khan was born as Temüjin around 1162 near the border of modern-day Mongolia and Siberia. After uniting the Mongol tribes, he was given the title 'Genghis Khan' in 1206, meaning 'universal ruler'.",
+            "QuestionImage": "History/Images/genghisKhan.jpg",
+            "Tags": ["History", "Mongol Empire"],
+            "Sources": ["Wikipedia", "Encyclopedia Britannica"]
+        }
     ]
 }

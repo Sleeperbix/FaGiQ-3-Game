@@ -7,10 +7,11 @@
         "ButtonTextColour": "#dcf5ef",
         "ButtonBGColour": "#0ad0f7",
         "Author" : "Sleeperbix",
-        "Summary" : "Questions from FaGiQ 1 & 2"
+        "Summary" : "The original Fish questions from FaGiQ 1 & 2, with some minor tweaks.\n\n\nCredits\nMusic: Fishing - Runescape 3 \nBackground: Unknown Source"
     },
     "Questions": [
         {
+            "ID": "001",
             "QuestionText": "Which of the following is NOT a type of Tetra?",
             "AnswerA": "Cardinal Tetra",
             "AnswerB": "Jewel Tetra",
@@ -20,9 +21,10 @@
             "AnswerFact": "The Zebra Tetra is not a real fish, while the other three are recognised types of tetras commonly found in the aquarium trade.",
             "QuestionImage": "Fish/Images/neontetra.jpg",
             "Tags": ["Fish", "Freshwater"],
-            "Sources" : ["", ""]
+            "Sources" : ["Wikipedia", "Fishkeeper", "TheSprucePets"]
         },
         {
+            "ID": "002",
             "QuestionText": "What type of fish is pictured here?",
             "AnswerA": "Atlantic Blue Marlin",
             "AnswerB": "King Mackerel",
@@ -32,7 +34,47 @@
             "AnswerFact": "The Atlantic Blue Marlin can grow up to 14 feet long, and weigh nearly 2,000 pounds. Both the Sailfish and Blue Marlin belong to the Istiophoriformes order, which also includes the closely related Swordfish.",
             "QuestionImage": "Fish/Images/bluemarlin.jpg",
             "Tags": ["Fish", "Saltwater"],
-            "Sources" : ["", ""]
+            "Sources" : ["Wikipedia", "National Geographic"]
+        },
+        {
+            "ID": "003",
+            "QuestionText": "Which of the following fish is typically the largest species in the world?",
+            "AnswerA": "Beluga Sturgeon",
+            "AnswerB": "Bluefin Tuna",
+            "AnswerC": "Giant Gourami",
+            "AnswerD": "Whale Shark",
+            "CorrectAnswer": "D",
+            "AnswerFact": "The Whale Shark is a slow-moving, filter-feeding carpet shark, and is the largest species of fish in the world. They can reach lengths up to 18m (60ft) in length and weigh between 11 and 21 tons. Some extinct fish, such as the Leedsicthys (pictured), were even larger.",
+            "QuestionImage": "Fish/Images/leedsichthys.jpg",
+            "Tags": ["Fish", "Saltwater"],
+            "Sources" : ["Wikipedia", "National Geographic"]
+        },
+        {
+            "ID": "004",
+            "QuestionText": "Which fish species was caught in the largest quantity worldwide by weight in 2022?",
+            "AnswerA": "Alaska Pollock",
+            "AnswerB": "Chub Mackerel",
+            "AnswerC": "Peruvian Anchovy",
+            "AnswerD": "Skipjack Tuna",
+            "CorrectAnswer": "C",
+            "AnswerFact": "In 2022, approximately 4.9 million tons worth of Peruvian Anchovies were caught, making them the most caught fish species worldwide by weight. The 2nd most caught by weight in 2022 was the Alaska Pollock, at 3.4 million tons.",
+            "QuestionImage": "Fish/Images/trawler.jpg",
+            "Tags": ["Fish"],
+            "Sources" : ["Food and Agriculture Organization of the United Nations"]
+        },
+        {
+            "ID": "005",
+            "QuestionText": "Atlantic, Pacific and Greenland are all types of which fish species?",
+            "AnswerA": "Cod",
+            "AnswerB": "Haddock",
+            "AnswerC": "Plaice",
+            "AnswerD": "Pollock",
+            "CorrectAnswer": "A",
+            "AnswerFact": "Atlantic Cod, Pacific Cod and Greenland Cod are all species within the cod family (Gadidae). Pollock is also part of the Cod family, but is usually referred to by its own name rather than 'cod'.",
+            "QuestionImage": "Fish/Images/colourfulFish.jpg",
+            "Tags": ["Fish"],
+            "Sources" : ["Wikipedia"]
         }
+        
     ]
 }
