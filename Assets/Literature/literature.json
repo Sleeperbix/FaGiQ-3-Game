@@ -7,10 +7,11 @@
         "ButtonTextColour": "#ffffff",
         "ButtonBGColour": "#692717",
         "Author" : "Sleeperbix",
-        "Summary" : "Questions from FaGiQ 1 & 2"
+        "Summary" : "The original fish questions from FaGiQ 2, with some minor tweaks.\n\n\nCredits\nMusic: Katawa Shoujo - Red Velvet \nBackground: Unknown Source"
     },
     "Questions": [
         {
+            "ID": "001",
             "QuestionText": "Which Charles Dickens novel features the characters Pip, Magwitch and Estella?",
             "AnswerA": "David Copperfield",
             "AnswerB": "Great Expectations",
@@ -20,9 +21,10 @@
             "AnswerFact": "Published in 1861, Great Expectations is the 13th novel by English author Charles Dickens, and is his penultimate completed novel.",
             "QuestionImage": "Literature/Images/charlesdickens.jpg",
             "Tags": ["Literature", "Charles Dickens"],
-            "Sources" : ["", ""]
+            "Sources" : ["Wikipedia"]
         },
         {
+            "ID": "002",
             "QuestionText": "What was the first Agatha Christie novel to feature the character Hercule Poirot?",
             "AnswerA": "Poirot Investigates",
             "AnswerB": "The Murder on the Links",
@@ -32,7 +34,34 @@
             "AnswerFact": "Written in 1916 and published in 1920, The Mysterious Affair at Styles is the first detective novel by British writer Agatha Christie, introducing her fictional detective Hercule Poirot.",            
             "QuestionImage": "Literature/Images/poirot.jpg",
             "Tags": ["Literature", "Agatha Christie", "Poirot"],
-            "Sources" : ["", ""]
+            "Sources" : ["Wikipedia"]
+        },
+        {
+            "ID": "003",
+            "QuestionText": "Which children's author wrote The Tale of Squirrel Nutkin?",
+            "AnswerA": "William Bennet",
+            "AnswerB": "James Herriot",
+            "AnswerC": "Beatrix Potter",
+            "AnswerD": "Margret Rey",
+            "CorrectAnswer": "C",
+            "AnswerFact": "Written and illustrated by Beatrix Potter, The Tale of Squirrel Nutkin is a children's story about a red squirrel named Nutkin. It was published in 1903, by Frederick Warne & Co.",            
+            "QuestionImage": "Literature/Images/squirrelnutkin.jpg",
+            "Tags": ["Literature", "Children's Literature"],
+            "Sources" : ["Wikipedia"]
+        },
+        {
+            "ID": "004",
+            "QuestionText": "As of 2025, which is the best-selling book series of all time?",
+            "AnswerA": "A Song of Ice and Fire",
+            "AnswerB": "Goosebumps",
+            "AnswerC": "Harry Potter",
+            "AnswerD": "Nancy Drew",
+            "CorrectAnswer": "C",
+            "AnswerFact": "The Harry Potter series has sold over 600 million copies, making it the best-selling book series of all time. Goosebumps is the second best-selling book series of all time, with over 400 million copies. Nancy Drew has sold over 200 million, and A Song of Ice and Fire over 90 million.",
+            "QuestionImage": "Literature/Images/books.jpg",
+            "Tags": ["Literature", "Children's Literature"],
+            "Sources" : ["Wikipedia", "BBC", "Scholastic"]
         }
+        
     ]
 }
