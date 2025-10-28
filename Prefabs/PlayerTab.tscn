@@ -1,0 +1,110 @@
+[gd_scene load_steps=3 format=3 uid="uid://vwerbkdq3msg"]
+
+[ext_resource type="Script" uid="uid://bhhjfcwfadcw0" path="res://Scripts/PlayerTab.cs" id="1_6j21r"]
+[ext_resource type="Script" uid="uid://co0lo02vnu10n" path="res://addons/font_auto_size_labels/auto_size_rich_text_label.gd" id="1_8d8k3"]
+
+[node name="PlayerTab" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6j21r")
+
+[node name="PlayerBG" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(180, 100)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.859863, 8.18223e-07, 0.42566, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerBG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerNameText" type="RichTextLabel" parent="PlayerBG/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.1
+theme_override_font_sizes/normal_font_size = 36
+text = "Brian"
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("1_8d8k3")
+_max_size = 50
+_min_size = 10
+_current_font_size = 36
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerBG/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ButtonMinus" type="Button" parent="PlayerBG/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="PlayerBG/VBoxContainer/HBoxContainer/ButtonMinus"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_top = 0.02
+anchor_right = 0.98
+anchor_bottom = 0.98
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 31
+text = "-"
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("1_8d8k3")
+_max_size = 50
+_current_font_size = 31
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
+
+[node name="PlayerScoreText" type="RichTextLabel" parent="PlayerBG/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/normal_font_size = 33
+text = "0"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_8d8k3")
+_max_size = 50
+_current_font_size = 33
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
+
+[node name="ButtonPlus" type="Button" parent="PlayerBG/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="PlayerBG/VBoxContainer/HBoxContainer/ButtonPlus"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_top = 0.02
+anchor_right = 0.98
+anchor_bottom = 0.98
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 31
+text = "+"
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("1_8d8k3")
+_max_size = 50
+_current_font_size = 31
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"

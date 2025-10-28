@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dm82ebv3yv7nu"]
+[gd_scene load_steps=9 format=3 uid="uid://dm82ebv3yv7nu"]
 
 [ext_resource type="PackedScene" uid="uid://dr0a3642i4krl" path="res://Prefabs/QuestionButtonBar.tscn" id="1_0u456"]
 [ext_resource type="PackedScene" uid="uid://ntsoaoxgdgyd" path="res://Prefabs/MovingBackground.tscn" id="1_60jnu"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dglhgklsv0skn" path="res://Prefabs/Managers/ManagerMultipleChoice.tscn" id="2_yotfa"]
 [ext_resource type="PackedScene" uid="uid://dr024j8qw11ud" path="res://Prefabs/SceneFader.tscn" id="4_dig23"]
 [ext_resource type="PackedScene" uid="uid://d2d35sub2p3wp" path="res://Prefabs/TopBar.tscn" id="5_uwgn8"]
+[ext_resource type="PackedScene" uid="uid://c7tec4swipfs4" path="res://Prefabs/PlayerBar.tscn" id="7_2xuli"]
 
 [node name="QuestionSelectionScene" type="Control"]
 layout_mode = 3
@@ -33,11 +34,10 @@ layout_mode = 1
 layout_mode = 1
 
 [node name="TopBarText" parent="TopBar/TopBarBG" index="0"]
-theme_override_font_sizes/normal_font_size = 60
+theme_override_font_sizes/normal_font_size = 58
 text = "QUESTION SELECTION"
 _max_size = 60
-_current_font_size = 60
-_size_just_modified_by_autosizer = true
+_current_font_size = 58
 
 [node name="ButtonLeft" parent="TopBar" index="1"]
 ManagerPath = NodePath("../../ManagerGame")
@@ -45,6 +45,9 @@ targetScene = "res://Scenes/RoundSelectionScene.tscn"
 
 [node name="ButtonLeft2" parent="TopBar" index="2"]
 visible = false
+
+[node name="PlayerBar" parent="." instance=ExtResource("7_2xuli")]
+layout_mode = 1
 
 [node name="SceneFader" parent="." instance=ExtResource("4_dig23")]
 

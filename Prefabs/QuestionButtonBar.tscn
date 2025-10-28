@@ -1,9 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://dr0a3642i4krl"]
+[gd_scene load_steps=5 format=3 uid="uid://dr0a3642i4krl"]
 
 [ext_resource type="Script" uid="uid://co0lo02vnu10n" path="res://addons/font_auto_size_labels/auto_size_rich_text_label.gd" id="1_ftl43"]
 [ext_resource type="Script" uid="uid://dvp66retptjjd" path="res://Scripts/ButtonAnimation.cs" id="1_xq78v"]
 
 [sub_resource type="Theme" id="Theme_jdq4n"]
+Button/styles/normal = null
+
+[sub_resource type="Theme" id="Theme_etd5i"]
 
 [node name="QuestionButtonBar" type="Control"]
 layout_mode = 3
@@ -82,7 +85,7 @@ offset_left = 4.0
 offset_right = 180.0
 offset_bottom = 150.0
 size_flags_horizontal = 3
-theme = SubResource("Theme_jdq4n")
+theme = SubResource("Theme_etd5i")
 script = ExtResource("1_xq78v")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Control2/Button2"]

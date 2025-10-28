@@ -7,10 +7,11 @@
         "ButtonTextColour": "#000000",
         "ButtonBGColour": "#ede9d3",
         "Author" : "Sleeperbix",
-        "Summary" : "Questions from FaGiQ 1 & 2"
+        "Summary" : "The original Bird questions from FaGiQ 2 with some extras and minor tweaks.\n\n\nCredits\nMusic: Surfing Bird - Trashmen (Karaoke Version: Zoom Karaoke Official channel on Youtube) \nBackground: Unknown Source"
     },
     "Questions": [
         {
+            "ID": "001",
             "QuestionText": "What is the scientific name of the Emperor Penguin?",
             "AnswerA": "Diomedea exulans",
             "AnswerB": "Aptenodytes forsteri",
@@ -20,9 +21,10 @@
             "AnswerFact": "The Emperor Penguin (Aptenodytes forsteri) is the tallest and heaviest of all living penguin species and is endemic to Antarctica. The other answers were the Wandering Albatross (Diomedea exulans), the Common Wood Pigeon (Columba palumbus) and the Chicken (Gallus gallus domesticus)",
             "QuestionImage": "Birds/Images/emperorpenguin.jpg",
             "Tags": ["Birds", "Penguins", "Antarctica"],
-            "Sources" : ["", ""]
+            "Sources" : ["British Antarctic Survey", "Wikipedia"]
         },
         {
+            "ID": "002",
             "QuestionText": "What type of goose is pictured here?",
             "AnswerA": "Canada Goose",
             "AnswerB": "Embden Goose",
@@ -32,8 +34,60 @@
             "AnswerFact": "The Canada Goose is a large goose, with a distinctive black head and neck, and large white throat patch. A species originally from North America, it has successfully spread to cover most of the UK. The Grass Goose does not exist, but Goosegrass is a common name for several types of grasses, sedges and annual herbs (including Sticky Weed).",
             "QuestionImage": "Birds/Images/canadagoose.jpg",
             "Tags": ["Birds", "Geese"],
-            "Sources" : ["", ""]
-        }
-  
+            "Sources" : ["Wikipedia", "RSPB"]
+        },
+        {
+            "ID": "003",
+            "QuestionText": "Which of the following birds has the largest recorded wingspan?",
+            "AnswerA": "Andean Condor",
+            "AnswerB": "Great White Pelican",
+            "AnswerC": "Marabou Stork",
+            "AnswerD": "Wandering Albatross",
+            "CorrectAnswer": "D",
+            "AnswerFact": "The largest recorded wingspan for the Wandering Albatross is 3.7m (12ft 2in). By comparison, the Great White Pelican reaches 3.6m (11ft 10in), the Andean Condor 3.3m (10ft 10in), and the Marabou Stork 3.2m (10ft 6in).",
+            "QuestionImage": "Birds/Images/wingspan.png",
+            "Tags": ["Birds", "Wingspans"],
+            "Sources" : ["Wikipedia"]
+        },
+        {
+            "ID": "004",
+            "QuestionText": "Which of the following birds is poisonous?",
+            "AnswerA": "Blue-cheeked Bee-eater",
+            "AnswerB": "Chinese Pond Heron",
+            "AnswerC": "Gunnison Sage-Grouse",
+            "AnswerD": "Hooded Pitohui",
+            "CorrectAnswer": "D",
+            "AnswerFact": "The Hooded Pitohui is a species of bird found in New Guinea, and one of the few known poisonous birds. Its skin and feathers contain batrachotoxin, the same potent neurotoxin found in Poison Dart Frogs. Scientists believe the toxin comes from beetles in its diet.",
+            "QuestionImage": "Birds/Images/birdsCollab.jpg",
+            "Tags": ["Birds", "Poison"],
+            "Sources" : ["Wikipedia", "Discover Wildlife"]
+        },
+        {
+            "ID": "005",
+            "QuestionText": "How many recognised species of wild pigeons and doves are there?",
+            "AnswerA": "Under 100",
+            "AnswerB": "Between 100 and 200",
+            "AnswerC": "Between 200 and 300",
+            "AnswerD": "Over 300",
+            "CorrectAnswer": "D",
+            "AnswerFact": "The International Ornithological Committee recognises 352 in the Columbidae family (pigeons and doves), including around 13 extinct ones.",
+            "QuestionImage": "Birds/Images/pigeon.jpg",
+            "Tags": ["Birds", "Pigeons"],
+            "Sources" : ["Wikipedia", "National Geographic", "Pigeon Rescue"]
+        },
+        {
+            "ID": "006",
+            "QuestionText": "What type of Bustard is pictured here?",
+            "AnswerA": "Great Bustard",
+            "AnswerB": "Josie's Bustard",
+            "AnswerC": "Little Bustard",
+            "AnswerD": "Nubian Bustard",
+            "CorrectAnswer": "A",
+            "AnswerFact": "The Great Bustard (Otis tarda) is a bird in the bustard family, and one of the heaviest flying birds in the world. While Josie's Bustard is fictional, several real species are named after people, such as Ludwig's Bustard and Denham's Bustard.",
+            "QuestionImage": "Birds/Images/greatBustard.jpg",
+            "Tags": ["Birds", "Bustards"],
+            "Sources" : ["Wikipedia", "National Geographic"]
+        } 
+         
     ]
 }

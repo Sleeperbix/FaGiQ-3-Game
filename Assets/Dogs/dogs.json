@@ -7,10 +7,11 @@
         "ButtonTextColour": "#000000",
         "ButtonBGColour": "#cfcfcf",
         "Author" : "Sleeperbix",
-        "Summary" : "Questions from FaGiQ 1 & 2"
+        "Summary" : "The original Dog questions from FaGiQ 2, with some extras and minor tweaks.\n\n\nCredits\nMusic: Dogsong - Undertale (Toby Fox) \nBackground: Unknown Source"
     },
     "Questions": [
         {
+            "ID": "001",
             "QuestionText": "What breed of dog is pictured here?",
             "AnswerA": "Kuvasz",
             "AnswerB": "German Pointer",
@@ -20,9 +21,10 @@
             "AnswerFact": "The German Shorthaired Pointer (or Deutsch Kurzhaar) is of medium size, and is an all-purpose gun dog suitable for hunting and retrieving on both land and water.",
             "QuestionImage": "Dogs/Images/germanpointer.jpg",
             "Tags": ["Dogs"],
-            "Sources" : ["", ""]
+            "Sources" : ["Wikipedia", "Google"]
         },
         {
+            "ID": "002",
             "QuestionText": "How many teeth does an adult dog typically have?",
             "AnswerA": "38",
             "AnswerB": "40",
@@ -32,7 +34,59 @@
             "AnswerFact": "Adult dogs typically have 42 teeth arranged in a pattern optimised for their omnivorous diet. Their teeth consist of 12 incisors, 4 canines, 16 premolars and 10 molars.",
             "QuestionImage": "Dogs/Images/dogteeth.jpg",
             "Tags": ["Dogs", "Teeth"],
-            "Sources" : ["", ""]
-        }        
+            "Sources" : ["PetMD", "Purina UK"]
+        },
+        {
+            "ID": "003",
+            "QuestionText": "Which of the following dog breeds is typically the smallest in size?",
+            "AnswerA": "Chihuahua",
+            "AnswerB": "Dachshund",
+            "AnswerC": "Pomeranian",
+            "AnswerD": "Shih Tzu",
+            "CorrectAnswer": "A",
+            "AnswerFact": "Chihuahuas are considered the world's smallest dog breed, usually standing about 6-9 inches tall. While other small breeds like Pomeranians and Shih Tzus are also tiny, the Chihuahua is consistently the smallest on average.",
+            "QuestionImage": "Dogs/Images/dogheight.jpg",
+            "Tags": ["Dogs"],
+            "Sources" : ["PetMD", "Purina UK"]
+        },
+        {
+            "ID": "004",
+            "QuestionText": "Which of the following dog breeds is typically the largest in size?",
+            "AnswerA": "Irish Wolfhound",
+            "AnswerB": "Neapolitan Mastiff",
+            "AnswerC": "Newfoundland",
+            "AnswerD": "Saint Bernard",
+            "CorrectAnswer": "A",
+            "AnswerFact": "The Irish Wolfhound is often recognized as the tallest dog breed in the world (usually fighting for this title against the Great Dane). The Irish Wolfhound often stands over 30 inches at the shoulder.",
+            "QuestionImage": "Dogs/Images/dogheight.jpg",
+            "Tags": ["Dogs"],
+            "Sources" : ["PetMD", "Purina UK"]
+        },
+        {
+            "ID": "005",
+            "QuestionText": "How old was the world's oldest verified dog when they died?",
+            "AnswerA": "19",
+            "AnswerB": "25",
+            "AnswerC": "29",
+            "AnswerD": "35",
+            "CorrectAnswer": "C",
+            "AnswerFact": "The world record for oldest verified dog is held by Bluey, a female Australian Cattle Dog who lived to be 29 years 5 months old (1910-1939). A Portuguese dog named Bobi briefly took the record (31 years 5 months, 1992-2023), but in 2024 Guinness World Records revoked the claim due to doubts about his true age.",
+            "QuestionImage": "Dogs/Images/cattledog.jpg",
+            "Tags": ["Dogs", "Records"],
+            "Sources" : ["Wikipedia", "Guinness World Records"]
+        },
+        {
+            "ID": "006",
+            "QuestionText": "What is the dog Laika best known for?",
+            "AnswerA": "Being the first dog to appear in a televised dogfood advert",
+            "AnswerB": "Being the first dog to reach the peak of Mt. Everest",
+            "AnswerC": "Being the first dog in space to orbit the Earth",
+            "AnswerD": "Being the first dog in a submarine 100m below sea level",
+            "CorrectAnswer": "C",
+            "AnswerFact": "Laika was a Soviet space dog who became the first animal to orbit the Earth aboard Sputnik 2 on 3 November 1957. Prior to Laika, other animals including monkeys and dogs had been sent on suborbital flights, but Laika was the first to complete an orbit. Unfortunately, she did not survive the mission.",
+            "QuestionImage": "Dogs/Images/laika.jpg",
+            "Tags": ["Dogs", "History"],
+            "Sources" : ["Wikipedia", "NASA"]
+        }
     ]
 }

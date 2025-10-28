@@ -10,6 +10,13 @@ public partial class ManagerGame : Node
     public static List<string> activeMultipleChoiceCategories;
     public SceneFader SceneFader { get; private set; }
 
+    public static List<string> playerNames = new List<string> { "The", "Same", "Old", "Fears", "Wish", "You", "Were", "Here" };
+    public static List<Color> playerColours = new List<Color> { new("#ff0000"), new("#0000ff"), new("#ffff00"), new("#00ff00"),
+                                                                new("#ff00ff"), new("#ff9100"), new("#c4c4c4"), new("#474747") };
+
+    public static List<int> playerScores = new List<int> { 0, 0, 0, 0, 0, 0, 0, 0 };
+    
+
     public override void _Ready()
     {
         Instance = this;
