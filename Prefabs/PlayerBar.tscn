@@ -1,19 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7tec4swipfs4"]
+[gd_scene load_steps=4 format=3 uid="uid://c7tec4swipfs4"]
 
 [ext_resource type="Script" uid="uid://kw4lm4mbgsie" path="res://Scripts/PlayerBar.cs" id="1_cutvb"]
 [ext_resource type="PackedScene" uid="uid://vwerbkdq3msg" path="res://Prefabs/PlayerTab.tscn" id="2_44sdq"]
+[ext_resource type="PackedScene" uid="uid://dk35tjdknom0g" path="res://Prefabs/PlayerToken.tscn" id="3_qcxyj"]
 
 [node name="PlayerBar" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 685.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_cutvb")
-playerTabScene = ExtResource("2_44sdq")
-numberOfPlayers = 8
+playerTabPrefab = ExtResource("2_44sdq")
+playerTokenPrefab = ExtResource("3_qcxyj")
 
 [node name="PlayerContainer" type="HBoxContainer" parent="."]
 layout_mode = 1

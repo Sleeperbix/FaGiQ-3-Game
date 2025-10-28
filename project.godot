@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="FaGiQ 3"
-run/main_scene="uid://ck5euc4wvsbiq"
+run/main_scene="uid://db60md5awaddo"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 

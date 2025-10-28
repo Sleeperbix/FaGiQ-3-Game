@@ -12,7 +12,7 @@ public partial class PlayerTab : Control
     private Button buttonMinus;
     private ColorRect background;
 
-    private int playerIndex;
+    public int playerIndex;
 
     public void Initalize(int index)
     {
@@ -30,10 +30,7 @@ public partial class PlayerTab : Control
         background = GetNode<ColorRect>("PlayerBG");
 
         // Assign
-
-        labelName.Text = playerName;
-        labelScore.Text = ManagerGame.playerScores[playerIndex].ToString();
-        background.Color = playerColour;
+        RefreshDisplay();
 
         buttonPlus.Pressed += OnPlusPressed;
         buttonMinus.Pressed += OnMinusPressed;
@@ -43,12 +40,30 @@ public partial class PlayerTab : Control
     private void OnPlusPressed()
     {
         ManagerGame.playerScores[playerIndex]++;
-        labelScore.Text = ManagerGame.playerScores[playerIndex].ToString();
+        var textColour = GetContrastingTextColour(background.Color).ToHtml(false);
+        labelScore.Text = $"[color=#{textColour}]{ManagerGame.playerScores[playerIndex]}[/color]";
     }
 
     private void OnMinusPressed()
     {
         ManagerGame.playerScores[playerIndex]--;
-        labelScore.Text = ManagerGame.playerScores[playerIndex].ToString();
+        var textColour = GetContrastingTextColour(background.Color).ToHtml(false);
+        labelScore.Text = $"[color=#{textColour}]{ManagerGame.playerScores[playerIndex]}[/color]";
+    }
+
+    private Color GetContrastingTextColour(Color background)
+    {
+        float luminance = (0.299f * background.R + 0.587f * background.G + 0.114f * background.B);
+        return luminance > 0.5f ? Colors.Black : Colors.White;
+    }
+
+    public void RefreshDisplay()
+    {
+        background.Color = ManagerGame.playerColours[playerIndex];        
+        var textColour = GetContrastingTextColour(background.Color).ToHtml(false);
+        labelScore.Text = $"[color=#{textColour}]{ManagerGame.playerScores[playerIndex]}[/color]";
+        labelName.Text = $"[color=#{textColour}]{ManagerGame.playerNames[playerIndex]}";
+
+
     }
 }
