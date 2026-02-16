@@ -7,7 +7,7 @@
         "ButtonTextColour": "#000000",
         "ButtonBGColour": "#ede9d3",
         "Author" : "Sleeperbix",
-        "Summary" : "The original Bird questions from FaGiQ 2 with some extras and minor tweaks.\n\n\nCredits\nMusic: Surfing Bird - Trashmen (Karaoke Version: Zoom Karaoke Official channel on Youtube) \nBackground: Unknown Source"
+        "Summary" : "The original Bird questions from FaGiQ 2, with additional questions and minor tweaks.\n\n\nCredits\nMusic: Surfing Bird - Trashmen (Karaoke Version: Zoom Karaoke Official channel on Youtube) \nBackground: Unknown Source"
     },
     "Questions": [
         {
@@ -77,7 +77,7 @@
         },
         {
             "ID": "006",
-            "QuestionText": "What type of Bustard is pictured here?",
+            "QuestionText": "What type of bustard is pictured here?",
             "AnswerA": "Great Bustard",
             "AnswerB": "Josie's Bustard",
             "AnswerC": "Little Bustard",
@@ -87,7 +87,84 @@
             "QuestionImage": "Birds/Images/greatBustard.jpg",
             "Tags": ["Birds", "Bustards"],
             "Sources" : ["Wikipedia", "National Geographic"]
-        } 
-         
+        },
+        {
+            "ID": "007",
+            "QuestionText": "Which of the following parrots is the heaviest on average?",
+            "AnswerA": "Kākāpō",
+            "AnswerB": "Kea",
+            "AnswerC": "South Island Kākā",
+            "AnswerD": "North Island Kākā",
+            "CorrectAnswer": "A",
+            "AnswerFact": "The Kākāpō is a large, green, flightless parrot and is the world's heaviest parrot, reaching weights of up to 4kg (8.8lbs). It is critically endangered and native to New Zealand.",
+            "QuestionImage": "Birds/Images/parrots.jpg",
+            "Tags": ["Birds", "Parrots", "New Zealand"],
+            "Sources" : ["Wikipedia", "Department of Conservation (New Zealand)", "Lafeber"]
+        },
+        {
+            "ID": "008",
+            "QuestionText": "What is the national bird of Saint Kitts and Nevis?",
+            "AnswerA": "Black Crowned Crane",
+            "AnswerB": "Blue Crane",
+            "AnswerC": "Brown Pelican",
+            "AnswerD": "Green Pheasant",
+            "CorrectAnswer": "C",
+            "AnswerFact": "The Brown Pelican, the smallest of the eight pelican species, is the national bird of Saint Kitts and Nevis. The other answers are the national birds of Nigeria (Black Crowned Crane), South Africa (Blue Crane), and Japan (Green Pheasant).",
+            "QuestionImage": "Birds/Images/birdsCollab2.jpg",
+            "Tags": ["Birds", "Geography", "Saint Kitts and Nevis", "National Birds"],
+            "Sources" : ["Wikipedia", "Maryland Zoo"]
+        },
+        {
+            "ID": "009",
+            "QuestionText": "What can the colour of a chicken's earlobe typically indicate?",
+            "AnswerA": "If they are currently laying",
+            "AnswerB": "How lively they are",
+            "AnswerC": "How old they are",
+            "AnswerD": "The colour that their eggs will be",
+            "CorrectAnswer": "D",
+            "AnswerFact": "Earlobe colour is a good indicator of egg colour in many chicken breeds, but it isn't a definitive factor as some breeds are exceptions. Chickens with white earlobes usually lay white eggs, while those with red earlobes typically lay brown eggs.",
+            "QuestionImage": "Birds/Images/chicken.jpg",
+            "Tags": ["Birds", "Chickens"],
+            "Sources" : ["Wikipedia", "Britannica", "FarmProgress"]
+        },
+        {
+            "ID": "010",
+            "QuestionText": "What is the fastest bird in the world?",
+            "AnswerA": "Common Swift",
+            "AnswerB": "Golden Eagle",
+            "AnswerC": "Peregrine Falcon",
+            "AnswerD": "White-throated Needletail",
+            "CorrectAnswer": "C",
+            "AnswerFact": "The Peregrine Falcon is not only the fastest bird in the world, but is also the fastest animal in general. It can reach diving speeds over 200mph (320km/h), with a maximum recorded speed of 240mph (386km/h). If excluding diving speed, the White-throated Needletail is the fastest in level flight at 105mph (169km/h).",
+            "QuestionImage": "Birds/Images/birdsCollab3.jpg",
+            "Tags": ["Birds", "Speed", "Animals"],
+            "Sources" : ["Wikipedia", "Britannica"]
+        },
+        {
+            "ID": "011",
+            "QuestionText": "What is the common name of the bird 'Balaeniceps Rex'?",
+            "AnswerA": "Hamerkop",
+            "AnswerB": "Marabou Stork",
+            "AnswerC": "Saddle-billed Stork",
+            "AnswerD": "Shoebill",
+            "CorrectAnswer": "D",
+            "AnswerFact": "Balaeniceps Rex is the scientific name of the Shoebill. The name means 'king whale-head', referring to its massive shoe-shaped bill.",
+            "QuestionImage": "Birds/Images/birdsCollab4.jpg",
+            "Tags": ["Birds"],
+            "Sources" : ["Wikipedia", "Britannica", "eBird", "EdgeOfExistence"]
+        },
+        {
+            "ID": "012",
+            "QuestionText": "Which of the following facts about the Hoatzin is true?",
+            "AnswerA": "It builds its nests underground",
+            "AnswerB": "It has a unique digestive system",
+            "AnswerC": "It has nostrils at the tip of its bill",
+            "AnswerD": "It spits venomous saliva",
+            "CorrectAnswer": "B",
+            "AnswerFact": "The Hoatzin has a unique foregut that ferments leaves, a digestive system similar to a cow. Because of this, it is often called the 'Stinkbird' due to its distinct, manure-like odor.",
+            "QuestionImage": "Birds/Images/hoatzin.jpg",
+            "Tags": ["Birds"],
+            "Sources" : ["Wikipedia", "WildLatitudes"]
+        }
     ]
 }
