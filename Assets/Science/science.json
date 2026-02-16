@@ -11,6 +11,7 @@
     },
     "Questions": [
         {
+            "ID": "001",
             "QuestionText": "Which part of the electromagnetic spectrum has the shortest wavelength?",
             "AnswerA": "Gamma Rays",
             "AnswerB": "Infrared",
@@ -20,9 +21,10 @@
             "AnswerFact": "Gamma Rays have the shortest wavelength of the electromagnetic spectrum, typically less than 0.01 nanometers. Ascending in length, the order is Gamma Rays, X-Rays, Ultraviolet, Visible Light, Infrared, Microwaves, and Radio Waves.",
             "QuestionImage": "Science/Images/spectrum.jpg",
             "Tags": ["Science", "Physics"],
-            "Sources" : ["", ""]
+            "Sources" : ["Wikipedia", "Britannica"]
         },
         {
+            "ID": "002",
             "QuestionText": "What does a Gauss Meter measure?",
             "AnswerA": "Magnetism",
             "AnswerB": "Radiation",
@@ -32,7 +34,99 @@
             "AnswerFact": "A Gauss Meter, also known as a Magnetometer, is a device used to measure the strength and direction of a magnetic field. Radiation is measured with a Geiger Counter, whilst the other two answers don't have a specific tool for measuring them.",
             "QuestionImage": "Science/Images/rulers.jpg",
             "Tags": ["Science", "Physics"],
-            "Sources" : ["", ""]
+            "Sources" : ["Wikipedia", "Britannica"]
+        },
+        {
+            "ID": "003",
+            "QuestionText": "In terms of weight, which of the following is the lightest chemical element?",
+            "AnswerA": "Hydrogen",
+            "AnswerB": "Helium",
+            "AnswerC": "Nitrogen",
+            "AnswerD": "Oxygen",
+            "CorrectAnswer": "A",
+            "AnswerFact": "Hydrogen (H, atomic number 1) is the lightest chemical element, with an atomic weight of approximately 1.008u. The most common form of hydrogen consists of one proton and one electron. Hydrogen is the most abundant element in the universe.",
+            "QuestionImage": "Science/Images/elements1.png",
+            "Tags": ["Science", "Chemistry", "Chemical Elements"],
+            "Sources" : ["Wikipedia", "Britannica"]
+        },
+        {
+            "ID": "004",
+            "QuestionText": "What does the chemical symbol 'Pb' stand for?",
+            "AnswerA": "Bismuth",
+            "AnswerB": "Lead",
+            "AnswerC": "Palladium",
+            "AnswerD": "Platinum",
+            "CorrectAnswer": "B",
+            "AnswerFact": "Lead (Pb, atomic number 82) is a dense, soft and malleable metal with a relatively low melting point. The symbol 'Pb' comes from the Latin word for lead, 'plumbum'.",
+            "QuestionImage": "Science/Images/pb.png",
+            "Tags": ["Science", "Chemistry", "Chemical Elements"],
+            "Sources" : ["Wikipedia", "Britannica"]
+        },
+        {
+            "ID": "005",
+            "QuestionText": "How many satellites does the planet Uranus have?",
+            "AnswerA": "9",
+            "AnswerB": "15",
+            "AnswerC": "21",
+            "AnswerD": "27",
+            "CorrectAnswer": "D",
+            "AnswerFact": "Uranus has 27 satellites. Unlike most planetary moons, they are named after characters from the works of William Shakespeare and Alexander Pope's poem 'The Rape of the Lock'. The five largest moons are Titania, Oberon, Umbriel, Ariel and Miranda",
+            "QuestionImage": "Science/Images/uranus.png",
+            "Tags": ["Science", "Space", "Planets"],
+            "Sources" : ["Wikipedia", "NASA"]
+        },
+        {
+            "ID": "006",
+            "QuestionText": "What does the 'A' in 'AC/DC' stand for?",
+            "AnswerA": "Accrued",
+            "AnswerB": "Acquired",
+            "AnswerC": "Activating",
+            "AnswerD": "Alternating",
+            "CorrectAnswer": "D",
+            "AnswerFact": "'AC/DC' stands for 'Alternating Current / Direct Current', two different types of electrical current. Alternating current periodically changes direction and is used in household power supplies, while direct current flows in one direction and is commonly used in batteries.",
+            "QuestionImage": "Science/Images/acdc.png",
+            "Tags": ["Science", "Electricity"],
+            "Sources" : ["Wikipedia"]
+        },
+        {
+            "ID": "007",
+            "QuestionText": "What is the proper name of the 'Dog Star'?",
+            "AnswerA": "Canine",
+            "AnswerB": "Hunter",
+            "AnswerC": "Pointer",
+            "AnswerD": "Sirius",
+            "CorrectAnswer": "D",
+            "AnswerFact": "Known colloquially as the 'Dog Star', Sirius is the brightest star in the night sky, located in the constellation 'Canis Major'. It is situated approximately 8.6 light-years from Earth.",
+            "QuestionImage": "Science/Images/dogstar.jpg",
+            "Tags": ["Science", "Space", "Stars"],
+            "Sources" : ["Wikipedia", "NASA"]
+        },
+        {
+            "ID": "008",
+            "QuestionText": "Which of the following metals has the lowest density under standard conditions?",
+            "AnswerA": "Aluminium",
+            "AnswerB": "Calcium",
+            "AnswerC": "Lithium",
+            "AnswerD": "Magnesium",
+            "CorrectAnswer": "C",
+            "AnswerFact": "Lithium is the lightest metal by density, with a density of about 0.53 g/cm³ under standard conditions. Despite being a metal, it is soft enough to be cut with a knife and floats on water.",
+            "QuestionImage": "Science/Images/metal.jpg",
+            "Tags": ["Science", "Chemistry", "Metals"],
+            "Sources" : ["Wikipedia"]
+        },
+        {
+            "ID": "009",
+            "QuestionText": "Which uranium isotope has the longest half-life?",
+            "AnswerA": "Uranium-233",
+            "AnswerB": "Uranium-234",
+            "AnswerC": "Uranium-235",
+            "AnswerD": "Uranium-238",
+            "CorrectAnswer": "D",
+            "AnswerFact": "Uranium-238 is the most abundant naturally occurring isotope of uranium, making up over 99% of natural uranium. It has a half-life of approximately 4.5 billion years, which is comparable to the age of the Earth.",
+            "QuestionImage": "Science/Images/uranium.jpg",
+            "Tags": ["Science", "Chemistry"],
+            "Sources" : ["Wikipedia", "Radioactivity.eu.com"]
         }
+
     ]
 }

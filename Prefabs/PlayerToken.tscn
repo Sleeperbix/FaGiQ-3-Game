@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk35tjdknom0g"]
+
+[ext_resource type="Script" uid="uid://cpel8rj5wlgdn" path="res://Scripts/PlayerToken.cs" id="1_wfu7b"]
+[ext_resource type="Script" uid="uid://co0lo02vnu10n" path="res://addons/font_auto_size_labels/auto_size_rich_text_label.gd" id="2_4j2oe"]
+
+[node name="PlayerToken" type="Node2D" groups=["PlayerTokens"]]
+script = ExtResource("1_wfu7b")
+playerIndex = 2
+
+[node name="Initial" type="RichTextLabel" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_font_sizes/normal_font_size = 16
+scroll_active = false
+script = ExtResource("2_4j2oe")
+_max_size = 16
+_current_font_size = 16
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"

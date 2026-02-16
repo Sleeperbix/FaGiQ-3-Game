@@ -1,0 +1,27 @@
+{
+    "Global": {
+        "CategoryTitle": "Trees and Plants",
+        "BGImage": "Trees and Plants/Images/background-treesandplants.jpg",
+        "BGMusic": "Trees and Plants/Sounds/music-treesandplants.mp3",
+        "SelectionSound": "Trees and Plants/Sounds/select-treesandplants.wav",
+        "ButtonTextColour": "#382208",
+        "ButtonBGColour": "#87de99",
+        "Author" : "Sleeperbix",
+        "Summary" : "The original Trees and Plants questions from FaGiQ 1 & 2, with some minor tweaks.\n\n\nCredits\nMusic: Bean Fields - Penguin Café Orchestra \nBackground: Aron Visuals - https://unsplash.com/@aronvisuals"
+    },
+    "Questions": [
+        {
+            "ID": "001",
+            "QuestionText": "What type of tree is this?",
+            "AnswerA": "Ash",
+            "AnswerB": "Silver Birch",
+            "AnswerC": "Willow",
+            "AnswerD": "Yew",
+            "CorrectAnswer": "B",
+            "AnswerFact": "Silver birch is a striking, medium-sized deciduous tree. When mature they can reach 30m in height, forming a light canopy with elegant, drooping branches.",
+            "QuestionImage": "Trees and Plants/Images/silverbirch.jpg",
+            "Tags": ["Trees and Plants"],
+            "Sources" : ["Woodland Trust", "Google Images"]
+        }
+    ]
+}

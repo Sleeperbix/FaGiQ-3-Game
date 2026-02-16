@@ -1,0 +1,462 @@
+[gd_scene load_steps=11 format=3 uid="uid://db60md5awaddo"]
+
+[ext_resource type="PackedScene" uid="uid://wj0jg37461ob" path="res://Prefabs/Managers/ManagerGame.tscn" id="1_38hw6"]
+[ext_resource type="Script" uid="uid://20q63bbl6f7r" path="res://Scripts/PlayerSetup.cs" id="1_dafdh"]
+[ext_resource type="PackedScene" uid="uid://dwldkksxvb7b0" path="res://Prefabs/Managers/ManagerAudio.tscn" id="2_pg7mn"]
+[ext_resource type="PackedScene" uid="uid://d2d35sub2p3wp" path="res://Prefabs/TopBar.tscn" id="3_ly36h"]
+[ext_resource type="Script" uid="uid://qoi5bhwei3jl" path="res://Scripts/SceneButton.cs" id="4_pg7mn"]
+[ext_resource type="PackedScene" uid="uid://dr024j8qw11ud" path="res://Prefabs/SceneFader.tscn" id="4_rtwmh"]
+[ext_resource type="PackedScene" uid="uid://c7tec4swipfs4" path="res://Prefabs/PlayerBar.tscn" id="5_ly36h"]
+[ext_resource type="Script" uid="uid://co0lo02vnu10n" path="res://addons/font_auto_size_labels/auto_size_rich_text_label.gd" id="8_dafdh"]
+[ext_resource type="Script" uid="uid://ht0j7qoa271l" path="res://Scripts/PlayerCountButton.cs" id="9_034qf"]
+[ext_resource type="Texture2D" uid="uid://cdqd7bvauxq7r" path="res://Menu Assets/Images/chickenrun.jpg" id="10_utld8"]
+
+[node name="PlayerSetup" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dafdh")
+
+[node name="ManagerGame" parent="." instance=ExtResource("1_38hw6")]
+
+[node name="ManagerAudio" parent="." instance=ExtResource("2_pg7mn")]
+
+[node name="TopBar" parent="." instance=ExtResource("3_ly36h")]
+layout_mode = 1
+
+[node name="TopBarText" parent="TopBar/TopBarBG" index="0"]
+text = "Player Setup"
+
+[node name="ButtonLeft2" parent="TopBar" index="2"]
+script = ExtResource("4_pg7mn")
+ManagerPath = NodePath("../../ManagerGame")
+targetScene = "res://Scenes/CategorySetup.tscn"
+
+[node name="AutoSizeRichTextlabel" parent="TopBar/ButtonLeft2" index="0"]
+text = "Category Setup"
+
+[node name="PlayerBar" parent="." instance=ExtResource("5_ly36h")]
+layout_mode = 1
+offset_top = 735.0
+
+[node name="SceneFader" parent="." instance=ExtResource("4_rtwmh")]
+visible = false
+
+[node name="LeftColumn" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 1.0
+offset_top = 100.0
+offset_right = 400.0
+offset_bottom = -150.0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LeftColumn"]
+layout_mode = 2
+
+[node name="PlayerNumberBox" type="VBoxContainer" parent="LeftColumn/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="LeftColumn/VBoxContainer/PlayerNumberBox"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+theme_override_font_sizes/normal_font_size = 40
+text = "Number of Players"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_dafdh")
+_max_size = 40
+_current_font_size = 40
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LeftColumn/VBoxContainer/PlayerNumberBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("9_034qf")
+playerCount = 1
+playerBarPath = NodePath("../../../../../../PlayerBar")
+
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "1"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_dafdh")
+_max_size = 50
+_current_font_size = 50
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
+
+[node name="Button2" type="Button" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("9_034qf")
+playerCount = 2
+playerBarPath = NodePath("../../../../../../PlayerBar")
+
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer/Button2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "2"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_dafdh")
+_max_size = 50
+_current_font_size = 50
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
+
+[node name="Button3" type="Button" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("9_034qf")
+playerCount = 3
+playerBarPath = NodePath("../../../../../../PlayerBar")
+
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer/Button3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "3"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_dafdh")
+_max_size = 50
+_current_font_size = 50
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
+
+[node name="Button4" type="Button" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("9_034qf")
+playerCount = 4
+playerBarPath = NodePath("../../../../../../PlayerBar")
+
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer/Button4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "4"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_dafdh")
+_max_size = 50
+_current_font_size = 50
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("9_034qf")
+playerCount = 5
+playerBarPath = NodePath("../../../../../../PlayerBar")
+
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer2/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "5"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_dafdh")
+_max_size = 50
+_current_font_size = 50
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
+
+[node name="Button2" type="Button" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("9_034qf")
+playerCount = 6
+playerBarPath = NodePath("../../../../../../PlayerBar")
+
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer2/Button2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "6"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_dafdh")
+_max_size = 50
+_current_font_size = 50
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
+
+[node name="Button3" type="Button" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("9_034qf")
+playerCount = 7
+playerBarPath = NodePath("../../../../../../PlayerBar")
+
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer2/Button3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "7"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_dafdh")
+_max_size = 50
+_current_font_size = 50
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
+
+[node name="Button4" type="Button" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("9_034qf")
+playerCount = 8
+playerBarPath = NodePath("../../../../../../PlayerBar")
+
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer2/Button4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "8"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_dafdh")
+_max_size = 50
+_current_font_size = 50
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
+
+[node name="PlayerNameColourBox" type="VBoxContainer" parent="LeftColumn/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AutoSizeRichTextlabel2" type="RichTextLabel" parent="LeftColumn/VBoxContainer/PlayerNameColourBox"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+theme_override_font_sizes/normal_font_size = 30
+text = "Names & Colours"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_dafdh")
+_max_size = 40
+_current_font_size = 30
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
+
+[node name="HBoxs" type="VBoxContainer" parent="LeftColumn/VBoxContainer/PlayerNameColourBox"]
+layout_mode = 2
+size_flags_stretch_ratio = 1.5
+
+[node name="HBox1" type="HBoxContainer" parent="LeftColumn/VBoxContainer/PlayerNameColourBox/HBoxs"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="LeftColumn/VBoxContainer/PlayerNameColourBox/HBoxs/HBox1"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Player One..."
+
+[node name="ColorPicker" type="ColorPickerButton" parent="LeftColumn/VBoxContainer/PlayerNameColourBox/HBoxs/HBox1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+text = "
+"
+
+[node name="HBox2" type="HBoxContainer" parent="LeftColumn/VBoxContainer/PlayerNameColourBox/HBoxs"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="LeftColumn/VBoxContainer/PlayerNameColourBox/HBoxs/HBox2"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Player Two..."
+
+[node name="ColorPicker" type="ColorPickerButton" parent="LeftColumn/VBoxContainer/PlayerNameColourBox/HBoxs/HBox2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+text = "
+"
+
+[node name="HBox3" type="HBoxContainer" parent="LeftColumn/VBoxContainer/PlayerNameColourBox/HBoxs"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="LeftColumn/VBoxContainer/PlayerNameColourBox/HBoxs/HBox3"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Player Three..."
+
+[node name="ColorPicker" type="ColorPickerButton" parent="LeftColumn/VBoxContainer/PlayerNameColourBox/HBoxs/HBox3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+text = "
+"
+
+[node name="HBox4" type="HBoxContainer" parent="LeftColumn/VBoxContainer/PlayerNameColourBox/HBoxs"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="LeftColumn/VBoxContainer/PlayerNameColourBox/HBoxs/HBox4"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Player Four..."
+
+[node name="ColorPicker" type="ColorPickerButton" parent="LeftColumn/VBoxContainer/PlayerNameColourBox/HBoxs/HBox4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+text = "
+"
+
+[node name="HBox5" type="HBoxContainer" parent="LeftColumn/VBoxContainer/PlayerNameColourBox/HBoxs"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="LeftColumn/VBoxContainer/PlayerNameColourBox/HBoxs/HBox5"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Player Five..."
+
+[node name="ColorPicker" type="ColorPickerButton" parent="LeftColumn/VBoxContainer/PlayerNameColourBox/HBoxs/HBox5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+text = "
+"
+
+[node name="HBox6" type="HBoxContainer" parent="LeftColumn/VBoxContainer/PlayerNameColourBox/HBoxs"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="LeftColumn/VBoxContainer/PlayerNameColourBox/HBoxs/HBox6"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Player Six..."
+
+[node name="ColorPicker" type="ColorPickerButton" parent="LeftColumn/VBoxContainer/PlayerNameColourBox/HBoxs/HBox6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+text = "
+"
+
+[node name="HBox7" type="HBoxContainer" parent="LeftColumn/VBoxContainer/PlayerNameColourBox/HBoxs"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="LeftColumn/VBoxContainer/PlayerNameColourBox/HBoxs/HBox7"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Player Seven..."
+
+[node name="ColorPicker" type="ColorPickerButton" parent="LeftColumn/VBoxContainer/PlayerNameColourBox/HBoxs/HBox7"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+text = "
+"
+
+[node name="HBox8" type="HBoxContainer" parent="LeftColumn/VBoxContainer/PlayerNameColourBox/HBoxs"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="LeftColumn/VBoxContainer/PlayerNameColourBox/HBoxs/HBox8"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Player Eight..."
+
+[node name="ColorPicker" type="ColorPickerButton" parent="LeftColumn/VBoxContainer/PlayerNameColourBox/HBoxs/HBox8"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+text = "
+"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -200
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("10_utld8")
+expand_mode = 2
+
+[node name="PlayerTokenToggle" type="CheckButton" parent="."]
+layout_mode = 0
+offset_left = 561.0
+offset_top = 300.0
+offset_right = 605.0
+offset_bottom = 324.0
+button_pressed = true
+
+[editable path="TopBar"]

@@ -1,21 +1,21 @@
 [gd_scene load_steps=8 format=3 uid="uid://ck5euc4wvsbiq"]
 
-[ext_resource type="Script" uid="uid://b16im2olkd8vq" path="res://Scripts/CategoryImporter.cs" id="1_hpdsj"]
-[ext_resource type="PackedScene" uid="uid://wj0jg37461ob" path="res://Prefabs/Managers/ManagerGame.tscn" id="2_2tjd6"]
-[ext_resource type="PackedScene" uid="uid://dwldkksxvb7b0" path="res://Prefabs/Managers/ManagerAudio.tscn" id="3_fb7l2"]
-[ext_resource type="PackedScene" uid="uid://d2d35sub2p3wp" path="res://Prefabs/TopBar.tscn" id="4_l5axi"]
-[ext_resource type="Script" uid="uid://qoi5bhwei3jl" path="res://Scripts/SceneButton.cs" id="5_e7tr3"]
-[ext_resource type="Script" uid="uid://co0lo02vnu10n" path="res://addons/font_auto_size_labels/auto_size_rich_text_label.gd" id="6_wi5o5"]
-[ext_resource type="PackedScene" uid="uid://dr024j8qw11ud" path="res://Prefabs/SceneFader.tscn" id="7_p25d4"]
+[ext_resource type="Script" uid="uid://b16im2olkd8vq" path="res://Scripts/CategoryImporter.cs" id="1_oqql5"]
+[ext_resource type="PackedScene" uid="uid://wj0jg37461ob" path="res://Prefabs/Managers/ManagerGame.tscn" id="2_2y2js"]
+[ext_resource type="PackedScene" uid="uid://dwldkksxvb7b0" path="res://Prefabs/Managers/ManagerAudio.tscn" id="3_mgk0i"]
+[ext_resource type="PackedScene" uid="uid://d2d35sub2p3wp" path="res://Prefabs/TopBar.tscn" id="4_0la4v"]
+[ext_resource type="Script" uid="uid://qoi5bhwei3jl" path="res://Scripts/SceneButton.cs" id="5_ynl1w"]
+[ext_resource type="Script" uid="uid://co0lo02vnu10n" path="res://addons/font_auto_size_labels/auto_size_rich_text_label.gd" id="6_vupkw"]
+[ext_resource type="PackedScene" uid="uid://dr024j8qw11ud" path="res://Prefabs/SceneFader.tscn" id="7_7ok3s"]
 
-[node name="QuizSetup" type="Control" node_paths=PackedStringArray("searchButton", "tickAllButton", "untickAllButton", "resultsBox", "infoLabel", "setCategoriesButton")]
+[node name="CategorySetup" type="Control" node_paths=PackedStringArray("searchButton", "tickAllButton", "untickAllButton", "resultsBox", "infoLabel", "setCategoriesButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_hpdsj")
+script = ExtResource("1_oqql5")
 searchButton = NodePath("MarginContainer/VBoxContainer/AutoSearchButton")
 tickAllButton = NodePath("MarginContainer/VBoxContainer/TickButton")
 untickAllButton = NodePath("MarginContainer/VBoxContainer/UntickButton")
@@ -23,11 +23,11 @@ resultsBox = NodePath("MarginContainer/VBoxContainer/ScrollContainer/FoundContai
 infoLabel = NodePath("MarginContainer/VBoxContainer/ScrollContainer2/Label")
 setCategoriesButton = NodePath("MarginContainer/VBoxContainer/CategorySetButton")
 
-[node name="ManagerGame" parent="." instance=ExtResource("2_2tjd6")]
+[node name="ManagerGame" parent="." instance=ExtResource("2_2y2js")]
 
-[node name="ManagerAudio" parent="." instance=ExtResource("3_fb7l2")]
+[node name="ManagerAudio" parent="." instance=ExtResource("3_mgk0i")]
 
-[node name="TopBar" parent="." instance=ExtResource("4_l5axi")]
+[node name="TopBar" parent="." instance=ExtResource("4_0la4v")]
 layout_mode = 1
 offset_bottom = -800.0
 
@@ -36,9 +36,10 @@ text = "Category Setup"
 
 [node name="ButtonLeft" parent="TopBar" index="1"]
 ManagerPath = NodePath("../../ManagerGame")
+targetScene = "res://Scenes/PlayerSetup.tscn"
 
 [node name="ButtonLeft2" parent="TopBar" index="2"]
-script = ExtResource("5_e7tr3")
+script = ExtResource("5_ynl1w")
 ManagerPath = NodePath("../../ManagerGame")
 targetScene = "res://Scenes/RoundSelectionScene.tscn"
 
@@ -70,7 +71,7 @@ text = "Import Categories"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("6_wi5o5")
+script = ExtResource("6_vupkw")
 _max_size = 50
 _current_font_size = 45
 _editor_defaults_set = true
@@ -94,7 +95,7 @@ text = "Auto Search"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("6_wi5o5")
+script = ExtResource("6_vupkw")
 _max_size = 50
 _min_size = 10
 _current_font_size = 45
@@ -141,7 +142,7 @@ text = "Tick All"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("6_wi5o5")
+script = ExtResource("6_vupkw")
 _max_size = 50
 _min_size = 10
 _current_font_size = 45
@@ -166,7 +167,7 @@ text = "Untick All"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("6_wi5o5")
+script = ExtResource("6_vupkw")
 _max_size = 50
 _min_size = 10
 _current_font_size = 45
@@ -191,7 +192,7 @@ text = "Set Categories"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("6_wi5o5")
+script = ExtResource("6_vupkw")
 _max_size = 50
 _min_size = 10
 _current_font_size = 45
@@ -199,6 +200,7 @@ _editor_defaults_set = true
 metadata/_custom_type_script = "uid://co0lo02vnu10n"
 
 [node name="ideas label" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 450.0
 offset_top = 165.0
@@ -216,6 +218,7 @@ Set filepath (set location for Questions.txt to exist, and where to keep categor
 Enable category colours (Enable custom colours for categories)"
 
 [node name="loaded categories" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 818.0
 offset_top = 456.0
@@ -230,7 +233,7 @@ E.g.
 Dogs - 5 Questions
 History - 5 Questions"
 
-[node name="SceneFader" parent="." instance=ExtResource("7_p25d4")]
+[node name="SceneFader" parent="." instance=ExtResource("7_7ok3s")]
 visible = false
 
 [editable path="TopBar"]

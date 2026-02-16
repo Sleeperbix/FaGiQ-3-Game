@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bkuak7xaw8ovb"
+path="res://.godot/imported/music-treesandplants.mp3-a9052d8ea1a25147ec757b5cd551ed80.mp3str"
+
+[deps]
+
+source_file="res://Assets/Trees and Plants/Sounds/music-treesandplants.mp3"
+dest_files=["res://.godot/imported/music-treesandplants.mp3-a9052d8ea1a25147ec757b5cd551ed80.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
