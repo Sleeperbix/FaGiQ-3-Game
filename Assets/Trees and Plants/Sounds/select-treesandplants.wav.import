@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cmlshvlr1kgcw"
+path="res://.godot/imported/select-treesandplants.wav-0336859c5973bc4721d7cf4460797ffa.sample"
+
+[deps]
+
+source_file="res://Assets/Trees and Plants/Sounds/select-treesandplants.wav"
+dest_files=["res://.godot/imported/select-treesandplants.wav-0336859c5973bc4721d7cf4460797ffa.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://db60md5awaddo"]
+[gd_scene load_steps=11 format=3 uid="uid://db60md5awaddo"]
 
 [ext_resource type="PackedScene" uid="uid://wj0jg37461ob" path="res://Prefabs/Managers/ManagerGame.tscn" id="1_38hw6"]
 [ext_resource type="Script" uid="uid://20q63bbl6f7r" path="res://Scripts/PlayerSetup.cs" id="1_dafdh"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dr024j8qw11ud" path="res://Prefabs/SceneFader.tscn" id="4_rtwmh"]
 [ext_resource type="PackedScene" uid="uid://c7tec4swipfs4" path="res://Prefabs/PlayerBar.tscn" id="5_ly36h"]
 [ext_resource type="Script" uid="uid://co0lo02vnu10n" path="res://addons/font_auto_size_labels/auto_size_rich_text_label.gd" id="8_dafdh"]
+[ext_resource type="Script" uid="uid://ht0j7qoa271l" path="res://Scripts/PlayerCountButton.cs" id="9_034qf"]
+[ext_resource type="Texture2D" uid="uid://cdqd7bvauxq7r" path="res://Menu Assets/Images/chickenrun.jpg" id="10_utld8"]
 
 [node name="PlayerSetup" type="Control"]
 layout_mode = 3
@@ -49,7 +51,7 @@ anchors_preset = -1
 anchor_bottom = 1.0
 offset_top = 100.0
 offset_right = 400.0
-offset_bottom = -100.0
+offset_bottom = -150.0
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="LeftColumn"]
@@ -74,75 +76,225 @@ _current_font_size = 40
 _editor_defaults_set = true
 metadata/_custom_type_script = "uid://co0lo02vnu10n"
 
-[node name="OptionButton" type="OptionButton" parent="LeftColumn/VBoxContainer/PlayerNumberBox"]
-layout_mode = 2
-selected = 7
-item_count = 8
-popup/item_0/text = "1"
-popup/item_0/id = 0
-popup/item_1/text = "2"
-popup/item_1/id = 1
-popup/item_2/text = "3"
-popup/item_2/id = 2
-popup/item_3/text = "4"
-popup/item_3/id = 3
-popup/item_4/text = "5"
-popup/item_4/id = 4
-popup/item_5/text = "6"
-popup/item_5/id = 5
-popup/item_6/text = "7"
-popup/item_6/id = 6
-popup/item_7/text = "8"
-popup/item_7/id = 7
-
 [node name="VBoxContainer" type="VBoxContainer" parent="LeftColumn/VBoxContainer/PlayerNumberBox"]
 layout_mode = 2
 size_flags_vertical = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Button" type="Button" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+script = ExtResource("9_034qf")
+playerCount = 1
+playerBarPath = NodePath("../../../../../../PlayerBar")
+
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "1"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_dafdh")
+_max_size = 50
+_current_font_size = 50
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
 
 [node name="Button2" type="Button" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+script = ExtResource("9_034qf")
+playerCount = 2
+playerBarPath = NodePath("../../../../../../PlayerBar")
+
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer/Button2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "2"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_dafdh")
+_max_size = 50
+_current_font_size = 50
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
 
 [node name="Button3" type="Button" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+script = ExtResource("9_034qf")
+playerCount = 3
+playerBarPath = NodePath("../../../../../../PlayerBar")
+
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer/Button3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "3"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_dafdh")
+_max_size = 50
+_current_font_size = 50
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
 
 [node name="Button4" type="Button" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+script = ExtResource("9_034qf")
+playerCount = 4
+playerBarPath = NodePath("../../../../../../PlayerBar")
+
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer/Button4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "4"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_dafdh")
+_max_size = 50
+_current_font_size = 50
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Button" type="Button" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer2"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
+script = ExtResource("9_034qf")
+playerCount = 5
+playerBarPath = NodePath("../../../../../../PlayerBar")
+
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer2/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "5"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_dafdh")
+_max_size = 50
+_current_font_size = 50
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
 
 [node name="Button2" type="Button" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer2"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
+script = ExtResource("9_034qf")
+playerCount = 6
+playerBarPath = NodePath("../../../../../../PlayerBar")
+
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer2/Button2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "6"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_dafdh")
+_max_size = 50
+_current_font_size = 50
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
 
 [node name="Button3" type="Button" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer2"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
+script = ExtResource("9_034qf")
+playerCount = 7
+playerBarPath = NodePath("../../../../../../PlayerBar")
+
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer2/Button3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "7"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_dafdh")
+_max_size = 50
+_current_font_size = 50
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
 
 [node name="Button4" type="Button" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer2"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
+script = ExtResource("9_034qf")
+playerCount = 8
+playerBarPath = NodePath("../../../../../../PlayerBar")
+
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="LeftColumn/VBoxContainer/PlayerNumberBox/VBoxContainer/HBoxContainer2/Button4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "8"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_dafdh")
+_max_size = 50
+_current_font_size = 50
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://co0lo02vnu10n"
 
 [node name="PlayerNameColourBox" type="VBoxContainer" parent="LeftColumn/VBoxContainer"]
 layout_mode = 2
@@ -152,19 +304,20 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
-theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/normal_font_size = 30
 text = "Names & Colours"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("8_dafdh")
 _max_size = 40
-_current_font_size = 40
+_current_font_size = 30
 _editor_defaults_set = true
 metadata/_custom_type_script = "uid://co0lo02vnu10n"
 
 [node name="HBoxs" type="VBoxContainer" parent="LeftColumn/VBoxContainer/PlayerNameColourBox"]
 layout_mode = 2
+size_flags_stretch_ratio = 1.5
 
 [node name="HBox1" type="HBoxContainer" parent="LeftColumn/VBoxContainer/PlayerNameColourBox/HBoxs"]
 layout_mode = 2
@@ -285,5 +438,25 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
 text = "
 "
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -200
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("10_utld8")
+expand_mode = 2
+
+[node name="PlayerTokenToggle" type="CheckButton" parent="."]
+layout_mode = 0
+offset_left = 561.0
+offset_top = 300.0
+offset_right = 605.0
+offset_bottom = 324.0
+button_pressed = true
 
 [editable path="TopBar"]

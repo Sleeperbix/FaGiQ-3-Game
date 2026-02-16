@@ -7,9 +7,10 @@ public partial class PlayerSetup : Control
 {
     private List<LineEdit> nameInputs = new();
     private List<ColorPickerButton> colourInputs = new();
+    private CheckButton playerTokensToggle;
     public override void _Ready()
     {
-        for (int i = 1; i <= 8; i++)
+        for (int i = 1; i <= ManagerGame.playerCount; i++)
         {
             int playerIndex = i - 1;
 
@@ -17,7 +18,7 @@ public partial class PlayerSetup : Control
             if (HasNode(namePath))
             {
                 var lineEdit = GetNode<LineEdit>(namePath);
-                nameInputs.Add(lineEdit);                
+                nameInputs.Add(lineEdit);
 
                 lineEdit.Text = ManagerGame.playerNames[playerIndex];
                 lineEdit.TextSubmitted += newText => OnNameSubmitted(playerIndex, newText);
@@ -33,6 +34,10 @@ public partial class PlayerSetup : Control
                 colourPicker.ColorChanged += newColour => onColourChanged(playerIndex, newColour);
             }
         }
+
+        playerTokensToggle = GetNode<CheckButton>("PlayerTokenToggle");
+        playerTokensToggle.ButtonPressed = ManagerGame.playerTokensActive;
+        playerTokensToggle.Toggled += (bool toggleState) => TogglePlayerTokens(toggleState);
     }
 
     private void OnNameSubmitted(int playerIndex, string newName)
@@ -57,7 +62,7 @@ public partial class PlayerSetup : Control
                 tab.RefreshDisplay();
         }
     }
-    
+
     private void RefreshTokens(int playerIndex)
     {
         Color newColour = ManagerGame.playerColours[playerIndex];
@@ -73,6 +78,17 @@ public partial class PlayerSetup : Control
 
                 token.SetColours(fill, outline);
             }
+        }
+    }
+    
+    private void TogglePlayerTokens(bool toggleState)
+    {
+        GD.Print($"Token Toggle: {(toggleState ? "ON" : "OFF")}");
+        var tokens = GetTree().GetNodesInGroup("PlayerTokens");
+        foreach (PlayerToken token in tokens)
+        {
+            token.Visible = toggleState;
+            ManagerGame.playerTokensActive = toggleState;
         }
     }
 }

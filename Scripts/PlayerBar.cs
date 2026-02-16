@@ -10,14 +10,19 @@ public partial class PlayerBar : Control
     private List<PlayerTab> playerTabs = new();
     private List<PlayerToken> playerTokens = new();
 
-    [Export] private int numberOfPlayers = 8;
-
     public override void _Ready()
     {
         playerContainer = GetNode<HBoxContainer>("PlayerContainer");
+        RefreshPlayers(ManagerGame.playerCount);
+    }
 
-        // --- Create all tabs immediately ---
-        for (int i = 0; i < numberOfPlayers && i < 8; i++)
+    public void RefreshPlayers(int count)
+    {
+        // Clear all players tabs/tokens, then recreate.
+        ClearPlayers();
+        playerContainer = GetNode<HBoxContainer>("PlayerContainer");
+
+        for (int i = 0; i < count; i++)
         {
             var tab = playerTabPrefab.Instantiate<PlayerTab>();
             tab.Initalize(i);
@@ -26,10 +31,9 @@ public partial class PlayerBar : Control
             tab.SizeFlagsHorizontal = Control.SizeFlags.ExpandFill;
             playerContainer.AddChild(tab);
             playerTabs.Add(tab);
-        }
-
-        // --- Defer token creation ---
-        CallDeferred(nameof(CreateTokens));
+        }        
+        CallDeferred(nameof(CreateTokens));            
+        
     }
 
     private void CreateTokens()
@@ -37,37 +41,49 @@ public partial class PlayerBar : Control
         for (int i = 0; i < playerTabs.Count; i++)
         {
             var token = playerTokenPrefab.Instantiate<PlayerToken>();
-            token.playerIndex = i;
-            token.Visible = false;
+            token.Initalize(i);
 
-            // Use deferred add_child to be extra safe
             GetTree().CurrentScene.CallDeferred("add_child", token);
 
             playerTokens.Add(token);
         }
-
-        // Defer positioning until the next idle frame
-        CallDeferred(nameof(PositionTokens));
+        PositionTokensEvenly();
     }
 
-    private void PositionTokens()
+    private void PositionTokensEvenly()
     {
-        for (int i = 0; i < playerTabs.Count; i++)
+        int playerCount = playerTokens.Count;
+        Vector2 windowSize = GetViewport().GetVisibleRect().Size;
+        float screenWidth = windowSize.X;
+        float screenHeight = windowSize.Y;
+
+        float slotWidth = screenWidth / playerCount;
+        float yPos = screenHeight - 115f; // Set number to height from bottom of screen.
+
+        for (int i = 0; i < playerCount; i++)
         {
-            var tab = playerTabs[i];
             var token = playerTokens[i];
-
-            Vector2 globalTabPos = tab.GetGlobalTransformWithCanvas().Origin;
-            Rect2 rect = tab.GetRect();
-
-            float offsetY = -10f;
-
-            token.GlobalPosition = new Vector2(
-                globalTabPos.X + rect.Size.X / 2f,
-                globalTabPos.Y + offsetY
-            );
-
-            token.Visible = true;
+            float xPos = (slotWidth * i) + (slotWidth / 2f);
+            token.GlobalPosition = new Vector2(xPos, yPos);
+            if (!ManagerGame.playerTokensActive)
+            {
+                token.Visible = false;
+            }
         }
+    }
+
+    
+    public void ClearPlayers()
+    {
+        foreach (Node child in playerContainer.GetChildren())
+            child.QueueFree();
+        playerTabs.Clear();
+        var tokens = GetTree().GetNodesInGroup("PlayerTokens");
+        foreach (var node in tokens)
+        {
+            if (node is PlayerToken token)
+                token.QueueFree();
+        }
+        playerTokens.Clear();
     }
 }

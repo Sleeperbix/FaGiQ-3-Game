@@ -11,12 +11,33 @@ public partial class PlayerToken : Node2D
 
 	private bool dragging = false;
 	private Vector2 dragOffset = Vector2.Zero;
+	private Label numberLabel;
 
 	public override void _Ready()
 	{
 		SetProcessInput(true);
+		// Get colours
 		fillColour = ManagerGame.playerColours[playerIndex];
 		outlineColour = GetContrastingTextColour(fillColour);
+		
+		 // Create number label
+		numberLabel = new Label();
+		numberLabel.Text = (playerIndex + 1).ToString();
+		numberLabel.HorizontalAlignment = HorizontalAlignment.Center;
+		numberLabel.VerticalAlignment = VerticalAlignment.Center;
+		numberLabel.AddThemeColorOverride("font_color", outlineColour);
+		numberLabel.CustomMinimumSize = new Vector2(radius * 2, radius * 2);
+		numberLabel.Position = new Vector2(-radius, -radius);
+		AddChild(numberLabel);
+	}
+
+	public void Initalize(int index)
+	{
+		//GD.Print($"{ManagerGame.playerCount} Initializing token for player {index}.");
+		playerIndex = index;
+		fillColour = ManagerGame.playerColours[index];
+		outlineColour = GetContrastingTextColour(fillColour);
+		QueueRedraw();
 	}
 
 	public override void _Draw()
@@ -34,6 +55,7 @@ public partial class PlayerToken : Node2D
 	{
 		fillColour = fill;
 		outlineColour = outline;
+		numberLabel.AddThemeColorOverride("font_color", outlineColour);
 		QueueRedraw(); 
 	}
 	

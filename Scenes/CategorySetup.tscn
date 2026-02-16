@@ -36,6 +36,7 @@ text = "Category Setup"
 
 [node name="ButtonLeft" parent="TopBar" index="1"]
 ManagerPath = NodePath("../../ManagerGame")
+targetScene = "res://Scenes/PlayerSetup.tscn"
 
 [node name="ButtonLeft2" parent="TopBar" index="2"]
 script = ExtResource("5_ynl1w")
