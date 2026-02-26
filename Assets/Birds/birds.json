@@ -46,7 +46,7 @@
             "CorrectAnswer": "D",
             "AnswerFact": "The largest recorded wingspan for the Wandering Albatross is 3.7m (12ft 2in). By comparison, the Great White Pelican reaches 3.6m (11ft 10in), the Andean Condor 3.3m (10ft 10in), and the Marabou Stork 3.2m (10ft 6in).",
             "QuestionImage": "Birds/Images/wingspan.png",
-            "Tags": ["Birds", "Wingspans"],
+            "Tags": ["Birds", "Wingspans", "Size"],
             "Sources" : ["Wikipedia"]
         },
         {
@@ -98,7 +98,7 @@
             "CorrectAnswer": "A",
             "AnswerFact": "The Kākāpō is a large, green, flightless parrot and is the world's heaviest parrot, reaching weights of up to 4kg (8.8lbs). It is critically endangered and native to New Zealand.",
             "QuestionImage": "Birds/Images/parrots.jpg",
-            "Tags": ["Birds", "Parrots", "New Zealand"],
+            "Tags": ["Birds", "Parrots", "New Zealand", "Weight"],
             "Sources" : ["Wikipedia", "Department of Conservation (New Zealand)", "Lafeber"]
         },
         {

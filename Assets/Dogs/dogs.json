@@ -46,7 +46,7 @@
             "CorrectAnswer": "A",
             "AnswerFact": "Chihuahuas are considered the world's smallest dog breed, usually standing about 6-9 inches tall. While other small breeds like Pomeranians and Shih Tzus are also tiny, the Chihuahua is consistently the smallest on average.",
             "QuestionImage": "Dogs/Images/dogheight.jpg",
-            "Tags": ["Dogs"],
+            "Tags": ["Dogs", "Size"],
             "Sources" : ["PetMD", "Purina UK"]
         },
         {
@@ -59,7 +59,7 @@
             "CorrectAnswer": "A",
             "AnswerFact": "The Irish Wolfhound is often recognized as the tallest dog breed in the world (usually fighting for this title against the Great Dane). The Irish Wolfhound often stands over 30 inches at the shoulder.",
             "QuestionImage": "Dogs/Images/dogheight.jpg",
-            "Tags": ["Dogs"],
+            "Tags": ["Dogs", "Size"],
             "Sources" : ["PetMD", "Purina UK"]
         },
         {
@@ -87,6 +87,84 @@
             "QuestionImage": "Dogs/Images/laika.jpg",
             "Tags": ["Dogs", "History"],
             "Sources" : ["Wikipedia", "NASA"]
+        },
+        {
+            "ID": "007",
+            "QuestionText": "What is the fastest dog breed on land?",
+            "AnswerA": "Afghan Hound",
+            "AnswerB": "Greyhound",
+            "AnswerC": "Saluki",
+            "AnswerD": "Sloughi",
+            "CorrectAnswer": "B",
+            "AnswerFact": "The fastest dog breed is the Greyhound, with a top recorded speed of 45mph (72km/h). The Afghan Hound, Saluki and Sloughi all have a recorded top speed of 42mph (68km/h).",
+            "QuestionImage": "Dogs/Images/dogcollab1.jpg",
+            "Tags": ["Dogs", "Speed"],
+            "Sources" : ["WagWalking", "HorseAndHound"]
+        },
+        {
+            "ID": "008",
+            "QuestionText": "What is the scientific name for the Labrador Retriever?",
+            "AnswerA": "Canis Lupus Canem",
+            "AnswerB": "Canis Lupus Domesticus",
+            "AnswerC": "Canis Lupus Familaris",
+            "AnswerD": "Canis Lupus Nigrum",
+            "CorrectAnswer": "C",
+            "AnswerFact": "There is no separate scientific name for individual dog breeds. All domestic dogs, including the Labrador Retriever, belong to the same subspecies: Canis Lupus Familiaris, meaning “domestic dog”. Modern breeds differ in appearance and behaviour, but they are all genetically the same species.",
+            "QuestionImage": "Dogs/Images/labrador.jpg",
+            "Tags": ["Dogs"],
+            "Sources" : ["Wikipedia"]
+        },
+        {
+            "ID": "009",
+            "QuestionText": "How many dog breed groups are recognised in the UK?",
+            "AnswerA": "6",
+            "AnswerB": "7",
+            "AnswerC": "8",
+            "AnswerD": "9",
+            "CorrectAnswer": "B",
+            "AnswerFact": "The UK Kennel Club recognises 7 breed groups: Hound, Working, Terrier, Gundog, Pastoral, Utility and Toy. Other organisations classify breeds slightly differently, the American Kennel Club also recognises 7 groups (with name differences), while the Fédération Cynologique Internationale recognises 10.",
+            "QuestionImage": "Dogs/Images/dog1.jpg",
+            "Tags": ["Dogs", "UK"],
+            "Sources" : ["Royal Kennel Club", "Purina UK"]
+        },
+        {
+            "ID": "010",
+            "QuestionText": "According to the Dogs Trust National Dog Survey 2025, what was the most popular name for male dogs in the UK?",
+            "AnswerA": "Alfie",
+            "AnswerB": "Buddy",
+            "AnswerC": "Milo",
+            "AnswerD": "Teddy",
+            "CorrectAnswer": "D",
+            "AnswerFact": "According to the Dogs Trust National Dog Survey 2025, Teddy was the most popular male dog name in the UK with 2,750 dogs. Milo followed with 2,711, Alfie with 2,487, and Buddy with 2,480.",
+            "QuestionImage": "Dogs/Images/dogsurvey.jpg",
+            "Tags": ["Dogs", "UK"],
+            "Sources" : ["Dogs Trust"]
+        },
+        {
+            "ID": "011",
+            "QuestionText": "Which breed of dog was the first to be successfully cloned?",
+            "AnswerA": "Afghan Hound",
+            "AnswerB": "Golden Retriever",
+            "AnswerC": "Labrador Retriever",
+            "AnswerD": "Yorkshire Terrier",
+            "CorrectAnswer": "A",
+            "AnswerFact": "The first successfully cloned dog was an Afghan Hound named Snuppy, created by scientists in South Korea in 2005. The clone was carried by a Labrador Retriever surrogate after many failed attempts. In later research, additional clones of Snuppy were produced to study the long-term health effects of cloning.",
+            "QuestionImage": "Dogs/Images/dog2.jpg",
+            "Tags": ["Dogs", "Science"],
+            "Sources" : ["Wikipedia"]
+        },
+        {
+            "ID": "012",
+            "QuestionText": "Which breed of dog has the strongest recorded bite force?",
+            "AnswerA": "American Pit Bull Terrier",
+            "AnswerB": "German Shepherd",
+            "AnswerC": "Turkish Kangal",
+            "AnswerD": "Rottweiler",
+            "CorrectAnswer": "C",
+            "AnswerFact": "The Turkish Kangal is widely reported to have the strongest bite force of any domestic dog breed, measured at around 743 PSI. Turkish Kangals were bred to protect flocks from large predators such as wolves and bears.",
+            "QuestionImage": "Dogs/Images/dogcollab2.jpg",
+            "Tags": ["Dogs"],
+            "Sources": ["National Geographic", "Wikipedia"]
         }
     ]
 }
