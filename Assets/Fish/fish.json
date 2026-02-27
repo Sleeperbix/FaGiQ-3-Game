@@ -46,7 +46,7 @@
             "CorrectAnswer": "D",
             "AnswerFact": "The Whale Shark is a slow-moving, filter-feeding carpet shark, and is the largest species of fish in the world. They can reach lengths up to 18m (60ft) in length and weigh between 11 and 21 tons. Some extinct fish, such as the Leedsicthys (pictured), were even larger.",
             "QuestionImage": "Fish/Images/leedsichthys.jpg",
-            "Tags": ["Fish", "Saltwater"],
+            "Tags": ["Fish", "Size"],
             "Sources" : ["Wikipedia", "National Geographic"]
         },
         {
@@ -74,7 +74,45 @@
             "QuestionImage": "Fish/Images/colourfulFish.jpg",
             "Tags": ["Fish"],
             "Sources" : ["Wikipedia"]
-        }
-        
+        },
+        {
+            "ID": "006",
+            "QuestionText": "As of 2025, what is the conservation status of the Tiger Shark?",
+            "AnswerA": "Least Concern",
+            "AnswerB": "Near Threatened",
+            "AnswerC": "Endangered",
+            "AnswerD": "Critically Endangered",
+            "CorrectAnswer": "B",
+            "AnswerFact": "The International Union for Conservation of Nature (IUCN) lists the Tiger Shark as Near Threatened due to overfishing, shark finning, and population declines in parts of its range.",
+            "QuestionImage": "Fish/Images/tigershark.jpg",
+            "Tags": ["Fish", "Sharks"],
+            "Sources" : ["Flordia Museum", "Wikipedia"]
+        },
+        {
+            "ID": "007",
+            "QuestionText": "Which of the following fish is venomous?",
+            "AnswerA": "Great Barracuda",
+            "AnswerB": "Electric Eel",
+            "AnswerC": "Fugu Pufferfish",
+            "AnswerD": "Red Lionfish",
+            "CorrectAnswer": "D",
+            "AnswerFact": "Lionfish are venomous marine fish native to the Indo-Pacific. They possess potent, protein-based venom in their needle-like spines used for defence against predators. Fugu Pufferfish aren't venomous, but are poisonous if improperly prepared and eaten.",
+            "QuestionImage": "Fish/Images/fishcollab1.jpg",
+            "Tags": ["Fish", "Venom"],
+            "Sources" : ["Wikipedia", "National Geographic"]
+        },
+        {
+            "ID": "008",
+            "QuestionText": "What is the deepest depth a living fish has been found?",
+            "AnswerA": "Between 8,001m - 8,500m (26,250ft - 27,887ft)",
+            "AnswerB": "Between 8,501m - 9,000m (27,890ft - 29,527ft)",
+            "AnswerC": "Between 9,001m - 9,500m (29,530ft - 31,167ft)",
+            "AnswerD": "Between 9,501m - 10,000m (31,171ft - 32,808ft)",
+            "CorrectAnswer": "A",
+            "AnswerFact": "The deepest depth a living fish has been found was at 8,336m (27,349ft). The fish in question was a Mariana Snailfish (pictured), and was filmed by scientists in the Izu-Ogasawara Trench, south of Japan.",
+            "QuestionImage": "Fish/Images/marianaSnailfish.jpg",
+            "Tags": ["Fish"],
+            "Sources" : ["BBC", "Wikipedia"]
+        }        
     ]
 }
